@@ -1,0 +1,19 @@
+{
+  "baseUrl" : "https://qainfotech.com/",
+
+
+
+  "reporter":"mochawesome",
+  "reporterOptions":{
+    "reportDir":"cypress/reports",
+    "reportFileName":"testResult",
+    "overwrite":"false",
+    "html":"true",
+    "json":"true",
+    "charts":"true"
+    }
+ }
+
+
+
+ 

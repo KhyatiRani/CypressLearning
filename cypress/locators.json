@@ -1,0 +1,22 @@
+{
+    "homePage":{
+    "toggleIconOpen":".toggle-icon-open",
+    "aboutLink":"#cmm4e-menu-item-2123 > [href=\"#\"]",
+    "teamLink":"#cmm4e-menu-item-13637 > .cmm4e-nav-link> .cmm4e-item-label",
+    "teamsPage":".elementor-element-c23669e",
+    "servicesLink" :" #cmm4e-menu-item-10382 > .cmm4e-nav-link > .cmm4e-item-label",
+    "functionalTestingLink":".elementor-element-2ac9006c > .elementor-widget-container > div > .header-ul > :nth-child(1) > .elementor-item",
+    "functionalPage":".elementor-element-c2a9c64",
+    "quoteLink":".main-menu-quote",
+    "firstNameField":"#firstname-d5e258ac-06ed-4614-926f-d4dbd48a3046",
+    "lastNameField":"#lastname-d5e258ac-06ed-4614-926f-d4dbd48a3046",
+    "locationDropDown":"#location-d5e258ac-06ed-4614-926f-d4dbd48a3046",
+    "quotePage":".elementor-element-31e5ec5 > .elementor-column-wrap"
+  
+
+
+
+
+
+}
+}
