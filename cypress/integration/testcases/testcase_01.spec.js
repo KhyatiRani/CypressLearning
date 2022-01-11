@@ -9,7 +9,7 @@ const hp=new homePage()
       globalThis.data=data
       })
     })
-      before('Visits the URL Page', () => {
+      before('Visits the URL', () => {
         hp.visit()
       
       })
