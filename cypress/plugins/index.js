@@ -1,4 +1,18 @@
 /// <reference types="cypress" />
+
+/* const fs = require('fs-extra')
+const path = require('path')
+
+function getConfigurationByFile(file) {
+  const pathToConfigFile = path.resolve('..'CypressLearning','cypress','config',`${file}.json`)
+
+  return fs.readJson(pathToConfigFile)
+} */
+
+
+
+
+
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -17,6 +31,29 @@
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
+
+
+  
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+
+  // if version not defined, use local
+  //const file = config.env.configFile || 'cypress'
+
+  //return getConfigurationByFile(file)
+
+    // if version not defined, use local
+    const version = config.env.version || 'cypress'
+
+    // load env from json
+    config.env = require(`../../${version}.json`);
+  
+    // change baseUrl
+    config.baseUrl = config.env.baseUrl
+  
+    return config
+
+  
+
+
 }

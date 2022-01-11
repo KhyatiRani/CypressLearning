@@ -1,0 +1,295 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 0,
+    "pending": 0,
+    "failures": 9,
+    "start": "2022-01-06T04:42:48.076Z",
+    "end": "2022-01-06T04:43:30.563Z",
+    "duration": 42487,
+    "testsRegistered": 9,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "90da2e28-0fdf-4ea7-afc4-bb5b7466e57c",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 7528,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'QA');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'Most Reliable App & Cross Browser Testing Platform | BrowserStack' to include 'QA'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'Most Reliable App & Cross Browser Testing Platform | BrowserStack' to include 'QA'\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:206:23)",
+                "diff": null
+              },
+              "uuid": "73d72fd1-87ba-4756-987c-4b6628c02cf0",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to  the \"ABOUT\" page",
+              "fullTitle": "Check the Page Navigation visits to  the \"ABOUT\" page",
+              "timedOut": null,
+              "duration": 4326,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigateToAboutPage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.toggle-icon-open`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.toggle-icon-open`, but never found it.\n    at homePage.navigateToAboutPage (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:135:8)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:209:8)",
+                "diff": null
+              },
+              "uuid": "486d6697-fd37-46dc-b37e-374a12ae8274",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"About QA InfoTech\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"About QA InfoTech\" is present on that page",
+              "timedOut": null,
+              "duration": 4284,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.checkContent().contains('About QA InfoTech');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.elementor-element-c23669e`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.elementor-element-c23669e`, but never found it.\n    at homePage.checkContent (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:141:15)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:212:8)",
+                "diff": null
+              },
+              "uuid": "cd401f36-492a-456e-ab7c-7532ca232146",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to \"SERVICES\" page",
+              "fullTitle": "Check the Page Navigation visits to \"SERVICES\" page",
+              "timedOut": null,
+              "duration": 4307,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigatetoServicesPage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.toggle-icon-open`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.toggle-icon-open`, but never found it.\n    at homePage.navigatetoServicesPage (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:145:8)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:215:8)",
+                "diff": null
+              },
+              "uuid": "4afa5a6a-a0ef-4f68-a931-ee3e43b938a3",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"Functional Testing Services Overview\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"Functional Testing Services Overview\" is present on that page",
+              "timedOut": null,
+              "duration": 4322,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.verifyTheContent().contains('Functional Testing Services Overview');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.elementor-element-c2a9c64`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.elementor-element-c2a9c64`, but never found it.\n    at homePage.verifyTheContent (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:151:15)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:218:8)",
+                "diff": null
+              },
+              "uuid": "12da254d-98c4-4c78-ba48-2c2a2d0af1f1",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to \"SERVICES\" page",
+              "fullTitle": "Check the Page Navigation visits to \"SERVICES\" page",
+              "timedOut": null,
+              "duration": 4350,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigateToQuotePage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.toggle-icon-open`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.toggle-icon-open`, but never found it.\n    at homePage.navigateToQuotePage (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:155:8)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:221:8)",
+                "diff": null
+              },
+              "uuid": "9e0d06d4-a3ab-4932-bce3-db4e5416fbef",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Gets the input field and inputs text",
+              "fullTitle": "Check the Page Navigation Gets the input field and inputs text",
+              "timedOut": null,
+              "duration": 4329,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.entersTheName(data.firstName, data.lastName);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#firstname-d5e258ac-06ed-4614-926f-d4dbd48a3046`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#firstname-d5e258ac-06ed-4614-926f-d4dbd48a3046`, but never found it.\n    at homePage.entersTheName (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:160:8)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:224:8)",
+                "diff": null
+              },
+              "uuid": "073cda8b-f107-4220-b10b-86e92007f9bc",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select the location from drop down list",
+              "fullTitle": "Check the Page Navigation Select the location from drop down list",
+              "timedOut": null,
+              "duration": 4323,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.selectFromDropDownList(data.location);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#location-d5e258ac-06ed-4614-926f-d4dbd48a3046`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#location-d5e258ac-06ed-4614-926f-d4dbd48a3046`, but never found it.\n    at homePage.selectFromDropDownList (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:165:8)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:227:8)",
+                "diff": null
+              },
+              "uuid": "1e6a7384-017a-4978-82dd-99d5ac4d3009",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"Request For Quote\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"Request For Quote\" is present on that page",
+              "timedOut": null,
+              "duration": 4323,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.checkThecontent().contains('Request For Quote');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.elementor-element-31e5ec5 > .elementor-column-wrap`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.elementor-element-31e5ec5 > .elementor-column-wrap`, but never found it.\n    at homePage.checkThecontent (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:169:15)\n    at Context.eval (https://www.browserstack.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:230:8)",
+                "diff": null
+              },
+              "uuid": "ba3218d3-777d-485f-84d8-3de1a8189af8",
+              "parentUUID": "40eccfb1-c991-4a27-a3f5-a346861c64af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "73d72fd1-87ba-4756-987c-4b6628c02cf0",
+            "486d6697-fd37-46dc-b37e-374a12ae8274",
+            "cd401f36-492a-456e-ab7c-7532ca232146",
+            "4afa5a6a-a0ef-4f68-a931-ee3e43b938a3",
+            "12da254d-98c4-4c78-ba48-2c2a2d0af1f1",
+            "9e0d06d4-a3ab-4932-bce3-db4e5416fbef",
+            "073cda8b-f107-4220-b10b-86e92007f9bc",
+            "1e6a7384-017a-4978-82dd-99d5ac4d3009",
+            "ba3218d3-777d-485f-84d8-3de1a8189af8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 42092,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFileName": "testResult",
+        "overwrite": "false",
+        "html": "true",
+        "json": "true",
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "baseUrl" : "https://qainfotech.com/",
+  
+  "specs": "integrationFolder",
+  "ignoreTestFiles": "**/pageObject/*.js" ,
+
+  "reporter":"mochawesome",
+  "reporterOptions":{
+    "reportDir":"cypress/reports",
+    "reportFileName":"testResult",
+    "overwrite":"false",
+    "html":"true",
+    "json":"true",
+    "charts":"true"
+    }
+ }
+
+
+
+ 

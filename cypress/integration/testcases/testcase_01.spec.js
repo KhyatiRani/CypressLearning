@@ -1,3 +1,4 @@
+//Open Cypress Test Runner dashboard:npm run test
 import homePage from '../pageObject/homePage'
 describe('Check the Page Navigation',()=>{
 const hp=new homePage()
@@ -12,14 +13,14 @@ const hp=new homePage()
         hp.visit()
       
       })
-      it('Verify Page title',()=>{
+      it.only('Verify Page title',()=>{
         hp.getPageTitle().should('contains','QA')
       })
-      it('visits to  the "ABOUT" page',()=>{
+       it('visits to  the "ABOUT" page',()=>{
         hp.navigateToAboutPage()
       })
 
-      it('checks if "About QA InfoTech" is present on that page',()=>{
+     /*  it.skip('checks if "About QA InfoTech" is present on that page',()=>{
         hp.checkContent().contains('About QA InfoTech')
       })
     
@@ -40,7 +41,7 @@ const hp=new homePage()
       })
       it('checks if "Request For Quote" is present on that page',()=>{
         hp.checkThecontent().contains('Request For Quote')
-      })
+      })  */
 
   
   

@@ -1,19 +1,25 @@
+
 {
-  "baseUrl" : "https://qainfotech.com/",
+    "baseUrl" : "https://qainfotech.com/",
+    "ignoreTestFiles": "**/pageObject/*.js",
+    
+
+    
+    "specs": "integrationFolder",
+    "reporter":"mochawesome",
+    "reporterOptions":{
+      "reportDir":"cypress/reports",
+      "reportFileName":"testResult",
+      "overwrite":"false",
+      "html":"true",
+      "json":"true",
+      "charts":"true"
+      }
 
 
-
-  "reporter":"mochawesome",
-  "reporterOptions":{
-    "reportDir":"cypress/reports",
-    "reportFileName":"testResult",
-    "overwrite":"false",
-    "html":"true",
-    "json":"true",
-    "charts":"true"
-    }
- }
-
-
-
- 
+    
+   }
+  
+  
+  
+   

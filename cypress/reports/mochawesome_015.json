@@ -1,0 +1,88 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-05T10:20:42.313Z",
+    "end": "2022-01-05T10:20:51.499Z",
+    "duration": 9186,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "61657684-2140-4217-bd98-d58f9f4d4a77",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testAA.spec.js",
+      "file": "cypress/integration/testcases/testAA.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Login with app actions",
+          "fullTitle": "Login with app actions",
+          "timedOut": null,
+          "duration": 9154,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/');\n/*  cy\n .window().then(({app}) =>{\n     console.log(app)\n   }) */",
+          "err": {},
+          "uuid": "531a5e25-b40f-413b-a96d-e5c75fdd0bd7",
+          "parentUUID": "61657684-2140-4217-bd98-d58f9f4d4a77",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "531a5e25-b40f-413b-a96d-e5c75fdd0bd7"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 9154,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFileName": "testResult",
+        "overwrite": "false",
+        "html": "true",
+        "json": "true",
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
