@@ -3,6 +3,9 @@
     "baseUrl" : "https://qainfotech.com/",
     "ignoreTestFiles": "**/pageObject/*.js",
     
+      "chromeWebSecurity": false,
+    
+    
 
     
     "specs": "integrationFolder",

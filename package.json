@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "launchcypress": "npx cypress open",
+    "launchcypress": "cypress open",
     "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome",
+    "cypressinst":"cypress run ./node_modules/.bin/cypress  install--force",
     "merge-reports": "mochawesome-merge cypress/reports/*.json>mochawesome.json",
     "generate-reports": "marge mochawesome.json",
     "finaltest": "npm run testcases && npm run merge-reports && npm run generate-reports",

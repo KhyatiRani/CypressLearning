@@ -15,7 +15,7 @@
       cy.document().should("have.property", "charset").and("eq", "UTF-8"); */
      // cy.get('[alt="QA InfoTech Logo"]')
      
-     cy.get('[alt="QA InfoTech Logo"]').compareSnapshot()
+     //cy.get('[alt="QA InfoTech Logo"]').compareSnapshot()
       //cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo',0.1)
       //cy.get('[id="nava"]').compareSnapshot()
     
