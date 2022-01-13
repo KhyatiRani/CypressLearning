@@ -17,7 +17,7 @@
     "reporterOptions":{
       "reportDir":"cypress/reports",
       "reportFileName":"testResult",
-      "overwrite":"false",
+      "overwrite":"true",
       "html":"true",
       "json":"true",
       "charts":"true"
