@@ -3,13 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports",
-    "pretest": "npm run clean:reports",
     "scripts": "cypress run --headed",
-   
-
-
-
     "launchcypress": "cypress open",
     "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome --headed",
     "cy:chrome":"cypress run --headed --browser chrome",
