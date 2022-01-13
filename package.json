@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run --headed",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/ report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test" : "npm run scripts || npm run posttest",
+
+
+
     "launchcypress": "cypress open",
     "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome --headed",
-    "test":"npm run testcases",
+    "cy:chrome":"cypress run --headed --browser chrome",
+    "cy:edge":"cypress run --headed --browser edge --headed",
     "cypressinst":"cypress run ./node_modules/.bin/cypress  install--force",
     "merge-reports": "mochawesome-merge cypress/reports/*.json>mochawesome.json",
     "generate-reports": "marge mochawesome.json",
-    "finaltest": "npm run cleanup && npm run testcases && npm run merge-reports && npm run generate-reports",
+    "finaltest": "npm run testcases && npm run merge-reports && npm run generate-reports",
     "configFile": "cypress run --config-file dev.json",
     "qa": "cypress run  --env configFile=dev ",
     "dev": "cypress run --config integrationFolder=cypress/integration/testcases --env version=dev",
