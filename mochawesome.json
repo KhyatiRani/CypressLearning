@@ -1,0 +1,231 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-01-12T15:29:01.258Z",
+    "end": "2022-01-12T15:37:22.301Z",
+    "duration": 129539,
+    "testsRegistered": 3,
+    "passPercent": 33.333333333333336,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9f47812e-ab43-4cca-abf5-2fa2ba08ee58",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "938d7ea3-185d-4c10-87dd-7e9755af1da2",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 20294,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'QA');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `20000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `20000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `C:\\Users\\Khyati.rani\\CypressLearning\\cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Check the Page Navigation`",
+                "estack": "CypressError: Timed out after waiting `20000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `20000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `C:\\Users\\Khyati.rani\\CypressLearning\\cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Check the Page Navigation`\n    at timedOutWaitingForPageLoad (https://qainfotech.com/__cypress/runner/cypress_runner.js:157265:72)\n    at https://qainfotech.com/__cypress/runner/cypress_runner.js:158315:16\n    at tryCatcher (https://qainfotech.com/__cypress/runner/cypress_runner.js:13196:23)\n    at https://qainfotech.com/__cypress/runner/cypress_runner.js:8318:41\n    at tryCatcher (https://qainfotech.com/__cypress/runner/cypress_runner.js:13196:23)\n    at Promise._settlePromiseFromHandler (https://qainfotech.com/__cypress/runner/cypress_runner.js:11131:31)\n    at Promise._settlePromise (https://qainfotech.com/__cypress/runner/cypress_runner.js:11188:18)\n    at Promise._settlePromise0 (https://qainfotech.com/__cypress/runner/cypress_runner.js:11233:10)\n    at Promise._settlePromises (https://qainfotech.com/__cypress/runner/cypress_runner.js:11309:18)\n    at _drainQueueStep (https://qainfotech.com/__cypress/runner/cypress_runner.js:7903:12)\n    at _drainQueue (https://qainfotech.com/__cypress/runner/cypress_runner.js:7896:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qainfotech.com/__cypress/runner/cypress_runner.js:7912:5)\n    at Async.drainQueues (https://qainfotech.com/__cypress/runner/cypress_runner.js:7782:14)\nFrom Your Spec Code:\n    at homePage.visit (https://qainfotech.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:139:8)\n    at Context.eval (https://qainfotech.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:228:8)",
+                "diff": null
+              },
+              "uuid": "0e78f1f8-1b5e-4b80-ba26-c48a234da8be",
+              "parentUUID": "938d7ea3-185d-4c10-87dd-7e9755af1da2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0e78f1f8-1b5e-4b80-ba26-c48a234da8be"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20294,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "af8f2357-470f-43ce-8b5e-df4523b9c8ac",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bdc5add2-651c-4cf9-86a2-cc97bb5aa23d",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 48862,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'QA');",
+              "err": {},
+              "uuid": "5300012e-1310-4ee9-a915-aea6e7858649",
+              "parentUUID": "bdc5add2-651c-4cf9-86a2-cc97bb5aa23d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5300012e-1310-4ee9-a915-aea6e7858649"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 48862,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dd937093-f689-449a-978d-598e3ff324d5",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a8ae7e62-435c-4121-b3d5-11a3be7ae854",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 60383,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'QA');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `C:\\Users\\Khyati.rani\\CypressLearning\\cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Check the Page Navigation`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `C:\\Users\\Khyati.rani\\CypressLearning\\cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Check the Page Navigation`\n    at timedOutWaitingForPageLoad (https://qainfotech.com/__cypress/runner/cypress_runner.js:157265:72)\n    at https://qainfotech.com/__cypress/runner/cypress_runner.js:158315:16\n    at tryCatcher (https://qainfotech.com/__cypress/runner/cypress_runner.js:13196:23)\n    at https://qainfotech.com/__cypress/runner/cypress_runner.js:8318:41\n    at tryCatcher (https://qainfotech.com/__cypress/runner/cypress_runner.js:13196:23)\n    at Promise._settlePromiseFromHandler (https://qainfotech.com/__cypress/runner/cypress_runner.js:11131:31)\n    at Promise._settlePromise (https://qainfotech.com/__cypress/runner/cypress_runner.js:11188:18)\n    at Promise._settlePromise0 (https://qainfotech.com/__cypress/runner/cypress_runner.js:11233:10)\n    at Promise._settlePromises (https://qainfotech.com/__cypress/runner/cypress_runner.js:11309:18)\n    at _drainQueueStep (https://qainfotech.com/__cypress/runner/cypress_runner.js:7903:12)\n    at _drainQueue (https://qainfotech.com/__cypress/runner/cypress_runner.js:7896:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qainfotech.com/__cypress/runner/cypress_runner.js:7912:5)\n    at Async.drainQueues (https://qainfotech.com/__cypress/runner/cypress_runner.js:7782:14)\nFrom Your Spec Code:\n    at homePage.visit (https://qainfotech.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:139:8)\n    at Context.eval (https://qainfotech.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:228:8)",
+                "diff": null
+              },
+              "uuid": "45ddce7e-522a-4b26-bce5-a2e5407505db",
+              "parentUUID": "a8ae7e62-435c-4121-b3d5-11a3be7ae854",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "45ddce7e-522a-4b26-bce5-a2e5407505db"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 60383,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFileName": "testResult",
+        "overwrite": "false",
+        "html": "true",
+        "json": "true",
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

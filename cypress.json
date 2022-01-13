@@ -4,6 +4,10 @@
     "ignoreTestFiles": "**/pageObject/*.js",
     
       "chromeWebSecurity": false,
+
+      "defaultCommandTimeout":200000,
+      "pageLoadTimeout":200000,
+      "requestTimeout":200000,
     
     
 
