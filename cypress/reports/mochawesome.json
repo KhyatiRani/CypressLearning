@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-13T06:54:16.741Z",
+    "end": "2022-01-13T06:54:28.555Z",
+    "duration": 11814,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "741fd311-b1d7-49c7-b242-25165111b189",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c07d9782-370e-42d0-b431-ac2b0041f60f",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 11758,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'QA');",
+              "err": {},
+              "uuid": "cb3d6790-dd0b-429f-b3b9-c565c040cf9c",
+              "parentUUID": "c07d9782-370e-42d0-b431-ac2b0041f60f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cb3d6790-dd0b-429f-b3b9-c565c040cf9c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11758,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFileName": "testResult",
+        "overwrite": "true",
+        "html": "true",
+        "json": "true",
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
