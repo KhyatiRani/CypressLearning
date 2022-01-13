@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "launchcypress": "cypress open",
-    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome",
+    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome --headed",
     "cypressinst":"cypress run ./node_modules/.bin/cypress  install--force",
     "merge-reports": "mochawesome-merge cypress/reports/*.json>mochawesome.json",
     "generate-reports": "marge mochawesome.json",
