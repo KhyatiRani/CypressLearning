@@ -19,7 +19,7 @@
       "reportFileName":"testResult",
       "overwrite":"true",
       "html":"true",
-      "json":"false",
+      "json":"true",
       "charts":"true"
       }
 
