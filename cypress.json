@@ -9,18 +9,13 @@
       "pageLoadTimeout":200000,
       "requestTimeout":200000,
     
-    
-
-    
     "specs": "integrationFolder",
-    "reporter":"mochawesome",
-    "reporterOptions":{
-      "reportDir":"cypress/reports",
-      "reportFileName":"testResult",
-      "overwrite":"true",
-      "html":"true",
-      "json":"true",
-      "charts":"true"
+      "reporter": "mochawesome",
+      "reporterOptions": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true
       }
 
 
