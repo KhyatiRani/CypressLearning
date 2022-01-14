@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "open":"cypress open",
-    "run":"cypress run --headed --browser chrome",
+    "open": "cypress open",
+    "run": "cypress run --headed --browser chrome",
     "cy:chrome": "cypress run --headed --browser chrome",
     "cy:edge": "cypress run --headed --browser edge",
     "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome --headed",
@@ -177,7 +177,11 @@
     "yauzl": "^2.10.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@cypress/webpack-preprocessor": "^5.11.0",
     "allure-commandline": "^2.13.8",
+    "babel-loader": "^8.2.3",
     "cypress": "^9.1.1",
     "cypress-multi-reporters": "^1.5.0",
     "jenkins-mocha": "^8.0.0",
@@ -185,7 +189,8 @@
     "mocha-allure-reporter": "^1.4.0",
     "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.1",
-    "mochawesome-report-generator": "^6.0.1"
+    "mochawesome-report-generator": "^6.0.1",
+    "webpack": "^5.66.0"
   },
   "repository": {
     "type": "git",
