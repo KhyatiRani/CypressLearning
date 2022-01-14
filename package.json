@@ -4,7 +4,19 @@
   "main": "index.js",
   "scripts": {
     "open":"cypress open",
-    "run":"cypress run --headed --browser chrome"
+    "run":"cypress run --headed --browser chrome",
+    "cy:chrome": "cypress run --headed --browser chrome",
+    "cy:edge": "cypress run --headed --browser edge",
+    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js --browser chrome --headed",
+    "merge-reports": "mochawesome-merge cypress/reports/*.json>mochawesome.json",
+    "generate-reports": "marge mochawesome.json",
+    "finaltest": "npm run testcases && npm run merge-reports && npm run generate-reports",
+    "configFile": "cypress run --config-file dev.json",
+    "qa": "cypress run  --env configFile=dev ",
+    "dev": "cypress run --config integrationFolder=cypress/integration/testcases --env version=dev",
+    "de": "cypress run --config --env version=qa",
+    "base": "cypress run --env type=base --config screenshotsFolder=cypress/snapshots/base",
+    "actual": "cypress run --env type=actual"
   },
   "author": "khyati",
   "license": "ISC",
