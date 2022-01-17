@@ -13,14 +13,14 @@ const hp=new homePage()
         hp.visit()
       
       })
-      it.only('Verify Page title',()=>{
+      it('Verify Page title',()=>{
         hp.getPageTitle().should('contains','QA')
       })
        it('visits to  the "ABOUT" page',()=>{
         hp.navigateToAboutPage()
       })
 
-     /*  it.skip('checks if "About QA InfoTech" is present on that page',()=>{
+      it('checks if "About QA InfoTech" is present on that page',()=>{
         hp.checkContent().contains('About QA InfoTech')
       })
     
@@ -41,7 +41,7 @@ const hp=new homePage()
       })
       it('checks if "Request For Quote" is present on that page',()=>{
         hp.checkThecontent().contains('Request For Quote')
-      })  */
+      })  
 
   
   
