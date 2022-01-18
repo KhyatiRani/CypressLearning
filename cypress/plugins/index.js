@@ -46,6 +46,7 @@ function getConfigurationByFile(file) {
   return {
     browsers: config.browsers.filter((b) => b.family === 'chromium'),
   }
+}
 
 
 
