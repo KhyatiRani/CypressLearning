@@ -9,7 +9,7 @@ workflows:
     jobs: 
       - cypress/run:
                browser: chrome 
-               spec: ./cypress/integration/testcases/*.js
+               
              
               
 
