@@ -13,7 +13,7 @@ workflows:
       - cypress/run:
           executor: with-chrome
           browser: chrome
-          command: npm run --spec ./cypress/integration/testcases/*.js --reporter cypress-circleci-reporter
+          command: cypress run --spec ./cypress/integration/testcases/*.js --reporter cypress-circleci-reporter
                
              
               
