@@ -14,7 +14,7 @@ workflows:
           executor: with-chrome
           browser: chrome
           record: true
-          parallel: true
+          
          
 
     
