@@ -8,21 +8,14 @@ executors:
   with-chrome:
     docker:
       - image: 'cypress/browsers:node14.16.0-chrome90-ff88'
-
-jobs:
+workflows:
   build: 
-    executor:
-      name: win/default
-
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run testcases
-              
-executor: with-chrome
-browser: chrome
-record: true
-parallel: true
-parallelism: 2
+   jobs:
+     - cypress/run:
+        executor: with-chrome
+        browser: chrome
+        record: true
+        parallel: true
+        parallelism: 2
 
     
