@@ -10,12 +10,13 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
+
           name: 4 machines
           requires:
             - cypress/install
            
           post-steps:
-            run: npm run testcases --record -- --parallel 
+            - run: npm run testcases --record -- --parallel 
           record: true
           parallel: true
           parallelism: 4
