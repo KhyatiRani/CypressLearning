@@ -17,8 +17,6 @@ workflows:
            
           post-steps:
             - run: npm run testcases --record -- --parallel 
-          record: true
-          parallel: true
           parallelism: 4
           group: 4 machines
       - cypress/run:
