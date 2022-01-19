@@ -17,9 +17,7 @@ workflows:
           parallel: true
           parallelism: 2
 
-          post-steps:
-            - store_artifacts:
-                path: mochawesome-report
+    
                
              
               
