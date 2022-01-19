@@ -13,19 +13,10 @@ workflows:
       - cypress/run:
           executor: with-chrome
           browser: chrome
-<<<<<<< HEAD
+
           record: true
           parallel: true
           parallelism: 2
-=======
-          
-          
-         
 
-    
-               
-             
-              
->>>>>>> 2b723c1d83c51ce9e0d16b59046a6af76b00a06b
 
     
