@@ -13,7 +13,7 @@ workflows:
       - cypress/run:
           executor: with-chrome
           browser: chrome
-          record: true
+          
           
          
 
