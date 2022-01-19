@@ -1,28 +1,18 @@
-
 {
-    "baseUrl" : "https://qainfotech.com/",
-    "ignoreTestFiles": "**/pageObject/*.js",
-    
-      "chromeWebSecurity": false,
-
-      "defaultCommandTimeout":200000,
-      "pageLoadTimeout":200000,
-      "requestTimeout":200000,
-    
-    "specs": "integrationFolder",
-      "reporter": "mochawesome",
-      "reporterOptions": {
-        "reportDir": "cypress/reports",
-        "overwrite": false,
-        "html": false,
-        "json": true,
-        "charts":"true"
-      }
-
-
-    
-   }
-  
-  
-  
-   
+  "baseUrl": "https://qainfotech.com/",
+  "ignoreTestFiles": "**/pageObject/*.js",
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 200000,
+  "pageLoadTimeout": 200000,
+  "requestTimeout": 200000,
+  "specs": "integrationFolder",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "charts": "true"
+  },
+  "projectId": "sccu5e"
+}

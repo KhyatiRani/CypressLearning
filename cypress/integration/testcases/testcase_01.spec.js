@@ -13,7 +13,7 @@ const hp=new homePage()
         hp.visit()
       
       })
-      it('Verify Page title',()=>{
+      it.only('Verify Page title',()=>{
         hp.getPageTitle().should('contains','QA')
       })
        it('visits to  the "ABOUT" page',()=>{

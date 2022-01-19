@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-01-17T07:13:32.400Z",
-    "end": "2022-01-17T07:13:54.079Z",
-    "duration": 21679,
+    "start": "2022-01-18T17:36:17.496Z",
+    "end": "2022-01-18T17:36:36.934Z",
+    "duration": 19438,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e0e0918c-9a67-411a-818e-5bd6a831000e",
+      "uuid": "fbce63d2-351b-4bc3-8348-8caa662da3c6",
       "title": "",
       "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
       "file": "cypress/integration/testcases/testcase_01.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fc9ea06b-9521-42f7-80ab-949bdec831c4",
+          "uuid": "a9aded85-8b1f-4c70-93df-20a434b1ea2c",
           "title": "Check the Page Navigation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Verify Page title",
               "fullTitle": "Check the Page Navigation Verify Page title",
               "timedOut": null,
-              "duration": 21588,
+              "duration": 19342,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "hp.getPageTitle().should('contains', 'QA');",
               "err": {},
-              "uuid": "e9ee767a-708a-42a2-b46d-ce6a6ad86e8b",
-              "parentUUID": "fc9ea06b-9521-42f7-80ab-949bdec831c4",
+              "uuid": "cdbea64c-f91e-44f8-bdf1-45a46fab7309",
+              "parentUUID": "a9aded85-8b1f-4c70-93df-20a434b1ea2c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e9ee767a-708a-42a2-b46d-ce6a6ad86e8b"
+            "cdbea64c-f91e-44f8-bdf1-45a46fab7309"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21588,
+          "duration": 19342,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
