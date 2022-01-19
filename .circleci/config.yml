@@ -10,8 +10,6 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
-          pre-steps:
-            - run: 'Website navigation verfication'
           name: 4 machines
           requires:
             - cypress/install
