@@ -85,10 +85,27 @@ jobs:
           paths:
             - test3.json
             - test3.html
-  test4:
+ test4:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+          name: Running cypress tests 4
+          command: >-
+            npm run finaltest
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_artifacts:
+          path: mochawesome-report
+      - persist_to_workspace:
+          root: mochawesome-report
+          paths:
+            - test4.json
+            - test4.html
     
 workflows:
   version: 2
