@@ -1,33 +1,19 @@
+version: 2.1 # Use version 2.1 to enable orb usage.
 
-version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
-  
-executors:
-  with-chrome:
-    docker:
-      - image: 'cypress/browsers:node14.16.0-chrome90-ff88'
-workflows:
-  build:
-    jobs:
-      - cypress/install
-      - cypress/run:
-          name: 4 machines
-          requires:
-            - cypress/install
-          record: true
-          parallel: true
-          parallelism: 4
-          group: 4 machines
-      - cypress/run:
-          name: Chrome
-          requires:
-            - cypress/install
-          executor: with-chrome
-          record: true
-          parallel: true
-          parallelism: 2
-          browser: chrome
-          spec: ./cypress/integration/testcases/*.js
+  win: circleci/windows@2.2.0 
+  cypress: cypress-io/cypress@1.1.0
+
+jobs:
+  build: # name of your job
+    executor:
+      name: win/default # executor type
+      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
+
+    steps:
+      # Commands are run in a Windows virtual machine environment
+      - checkout
+      - run: npm install
+      - run: npm run testcases:record -- --parallel
 
     
