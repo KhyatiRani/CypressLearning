@@ -1,8 +1,12 @@
 version: 2.1
 orbs:
+   win: circleci/windows@2.2.0
   cypress: cypress-io/cypress@1
 workflows:
   build:
+    executor:
+      name: win/default 
+      size: "medium" 
     jobs:
       - cypress/install
       - cypress/run:
