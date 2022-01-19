@@ -13,7 +13,7 @@ const hp=new homePage()
         hp.visit()
       
       })
-      it.only('Verify Page title',()=>{
+      it('Verify Page title',()=>{
         hp.getPageTitle().should('contains','QA')
       })
        it('visits to  the "ABOUT" page',()=>{
@@ -33,13 +33,13 @@ const hp=new homePage()
       it('visits to "SERVICES" page',()=>{
         hp.navigateToQuotePage()
       })
-      it('Gets the input field and inputs text', () => {
+      it.skip('Gets the input field and inputs text', () => {
         hp.entersTheName(data.firstName,data.lastName)
       })
-      it('Select the location from drop down list', () => {
+      it.skip('Select the location from drop down list', () => {
         hp.selectFromDropDownList(data.location)
       })
-      it('checks if "Request For Quote" is present on that page',()=>{
+      it.skip('checks if "Request For Quote" is present on that page',()=>{
         hp.checkThecontent().contains('Request For Quote')
       })  
 

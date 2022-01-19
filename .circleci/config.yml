@@ -10,9 +10,14 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
+          pre-steps:
+            - run: 'Website navigation verfication'
           name: 4 machines
           requires:
             - cypress/install
+           
+          post-steps:
+            - run: npm run e2e:record -- --parallel 
           record: true
           parallel: true
           parallelism: 4
