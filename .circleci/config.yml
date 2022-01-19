@@ -15,7 +15,7 @@ workflows:
           browser: chrome
           record: true
           parallel: true
-          parallelism: 2
+          parallelism: 3
 
     
                
