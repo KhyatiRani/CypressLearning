@@ -1,14 +1,35 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
+  win: circleci/windows@2.2.0
+
+  jobs:
+    4x-electron: # name of your job
+    executor:
+      name: win/default # executor type
+      size: "medium"
+executors:
+  with-chrome:
+    docker:
+      - image: 'cypress/browsers:node14.16.0-chrome90-ff88'
+
 workflows:
   build:
     jobs:
       - cypress/install
       - cypress/run:
+          executor: with-chrome
+          browser: chrome
+          name: Chrome
+
+          name: 4 machines
           requires:
             - cypress/install
-          record: true
-          parallel: true
+          post-steps:
+            - run: npm run testcases --record --group 2x-chrome chrome --parallel
           parallelism: 2
-          
+          group: 2 machines
+
+
+
+ 
