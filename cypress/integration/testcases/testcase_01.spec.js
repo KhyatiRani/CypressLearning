@@ -24,25 +24,7 @@ const hp=new homePage()
         hp.checkContent().contains('About QA InfoTech')
       })
     
-      it('visits to "SERVICES" page',()=>{
-        hp.navigatetoServicesPage()
-      })
-      it('checks if "Functional Testing Services Overview" is present on that page',()=>{
-        hp.verifyTheContent().contains('Functional Testing Services Overview')
-      })
-      it('visits to "SERVICES" page',()=>{
-        hp.navigateToQuotePage()
-      })
-      it.skip('Gets the input field and inputs text', () => {
-        hp.entersTheName(data.firstName,data.lastName)
-      })
-      it.skip('Select the location from drop down list', () => {
-        hp.selectFromDropDownList(data.location)
-      })
-      it.skip('checks if "Request For Quote" is present on that page',()=>{
-        hp.checkThecontent().contains('Request For Quote')
-      })  
-
+     
   
   
      })
