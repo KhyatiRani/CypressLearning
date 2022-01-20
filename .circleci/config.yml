@@ -27,5 +27,4 @@ workflows:
           
             - run: npm run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6
             - run: npm run testcases
-          parallelism: 2
-          group: 2 machines
+         
