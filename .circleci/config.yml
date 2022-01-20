@@ -24,4 +24,5 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6
-      - run: npm run testcases --record --group 2x-chrome chrome --parallel
+      - run: npm run cy:chrome --record --group --parallel
+      - run: npm run cy:edge --record --group --parallel 
