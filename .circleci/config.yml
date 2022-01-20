@@ -1,132 +1,36 @@
-version: 2
-jobs:
-  build:
-    working_directory: ~/tmp
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+  win: circleci/windows@2.2.0
+
+  jobs:
+    build: # name of your job
+    executor:
+      name: win/default # executor type
+      size: "medium"
+executors:
+  with-chrome:
     docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - checkout
-      - run: npm ci
-  combine_reports:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - attach_workspace:
-          at: cypress/reports
-      - run: ls /tmp/mochawesome-report
-  test1:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - run:
-          name: Running cypress tests 1
-          command: >-
-           npm run finaltest
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
-      - store_artifacts:
-          path: mochawesome-report
-      - persist_to_workspace:
-          root: mochawesome-report
-          paths:
-            - test1.json
-            - test1.html
-  test2:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - run:
-          name: Running cypress tests 2
-          command: >-
-            npm run finaltest
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
-      - store_artifacts:
-          path: cypress/reports
-      - persist_to_workspace:
-          root: cypress/reports
-          paths:
-            - test2.json
-            - test2.html
-  test3:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - run:
-          name: Running cypress tests 3
-          command: >-
-            npm run finaltest
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
-      - store_artifacts:
-          path: cypress/reports
-      - persist_to_workspace:
-          root: cypress/reports
-          paths:
-            - test3.json
-            - test3.html
- test4:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-          name: Running cypress tests 4
-          command: >-
-            npm run finaltest
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
-      - store_artifacts:
-          path: mochawesome-report
-      - persist_to_workspace:
-          root: mochawesome-report
-          paths:
-            - test4.json
-            - test4.html
-    
+      - image: 'cypress/browsers:node14.16.0-chrome90-ff88'
 workflows:
-  version: 2
-  build_and_test:
+  build:
     jobs:
-      - build
-      - test1:
+      - cypress/install
+      - cypress/run:
+
+          name: 4 machines
           requires:
-            - build
-      - test2:
+            - cypress/install
+           
+          post-steps:
+            - run: npm run testcases --record -- --parallel 
+            record: true
+          parallel: true
+          parallelism: 4
+          group: 4 machines
+      - cypress/run:
+          executor: with-chrome
+          browser: chrome
+          name: Chrome
           requires:
-            - build
-      - test3:
-          requires:
-            - build
-      - test4:
-          requires:
-            - build
-      - combine_reports:
-          requires:
-            - test1
-            - test2
-            - test3
-            - test4
+            - cypress/install
