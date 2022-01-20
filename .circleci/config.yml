@@ -23,7 +23,7 @@ workflows:
             - cypress/install
            
           post-steps:
-            - run: npm run testcases --record --parallel 
+            - run: npm run testcases
             record: true
           parallel: true
           parallelism: 4
