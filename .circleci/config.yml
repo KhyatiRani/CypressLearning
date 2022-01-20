@@ -23,9 +23,11 @@ workflows:
           requires:
             - cypress/install
           post-steps:
-            - run: npm run testcases --record --group 2x-chrome chrome --parallel
+            - run: npm run key
           parallelism: 2
           group: 2 machines
+          record: true
+          parallel: true
 
 
 
