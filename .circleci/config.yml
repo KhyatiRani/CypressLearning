@@ -12,4 +12,4 @@ workflows:
           parallel: true
           parallelism: 2
           post-steps:
-            - run: npm run testcases
+            - run: npm run testcases --record --parallel 
