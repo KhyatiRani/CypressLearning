@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "key":"cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
     "open": "cypress open",
     "cy:chrome": "cypress run --headed --browser chrome",
     "cy:edge": "cypress run --headed --browser electron",
