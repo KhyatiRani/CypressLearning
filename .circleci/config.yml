@@ -20,9 +20,6 @@ workflows:
       - cypress/run:
           executor: with-chrome
           browser: chrome
-          name: Chrome
-
-          name: 4 machines
           requires:
             - cypress/install
           post-steps:
