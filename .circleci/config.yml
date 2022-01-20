@@ -21,10 +21,8 @@ workflows:
           name: 4 machines
           requires:
             - cypress/install
-          record: true
-          parallel: true
           post-steps:
-            - run: npm run testcases
+            - run: npm run 
           parallelism: 4
           group: 4 machines
       - cypress/run:
@@ -33,3 +31,10 @@ workflows:
           name: Chrome
           requires:
             - cypress/install
+1x-electron:
+  steps:
+     - run: npm run testcases:record -- --group $CIRCLE_JOB
+2x-electron:
+parallelism: 2
+steps:
+     - run: npm run testcases:record -- --group $CIRCLE_JOB
