@@ -24,8 +24,7 @@ workflows:
             - cypress/install
           post-steps:
             - run: npm run key
-          parallelism: 2
-          group: 2 machines
+          
           
           
 
