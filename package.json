@@ -8,7 +8,7 @@
     "cy:chrome": "cypress run --headed --browser chrome",
     "cy:edge": "cypress run --headed --browser electron",
     "runs": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
-    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js  --headed --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
+    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js  --headed --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --parallel ",
     "merge-reports": "mochawesome-merge cypress/reports/*.json > mochawesome.json",
     "generate-reports": "marge  mochawesome.json",
     "finaltest": "npm run testcases && npm run merge-reports && npm run generate-reports",
