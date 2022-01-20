@@ -5,10 +5,10 @@
   "scripts": {
     "key":"cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
     "open": "cypress open",
-    "cy:chrome": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js",
-    "cy:edge": "cypress run --spec ./cypress/integration/testcases/testcase_02.spec.js",
+    "cy:chrome": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --parallel",
+    "cy:edge": "cypress run --spec ./cypress/integration/testcases/testcase_02.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --parallel",
     "runs": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
-    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js  --headed --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --parallel ",
+    "testcases": "cypress run --spec ./cypress/integration/testcases/*.js  --headed --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --parallel",
     "merge-reports": "mochawesome-merge cypress/reports/*.json > mochawesome.json",
     "generate-reports": "marge  mochawesome.json",
     "finaltest": "npm run testcases && npm run merge-reports && npm run generate-reports",
