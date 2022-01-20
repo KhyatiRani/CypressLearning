@@ -9,7 +9,7 @@
     "cy:edge": "cypress run --headed --browser electron",
     "runs": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
     "testcase1": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_01 --spec ./cypress/integration/testcases/testcase_01.spec.js   --parallel",
-    "testcase2": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_02 --spec ./cypress/integration/testcases/testcase_02.spec.js   --parallel",
+    "testcase2": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_02 --spec ./cypress/integration/testcases/**/*  --parallel",
     "testcases":"npm run testcase1 && npm run testcase2",
     "merge-reports": "mochawesome-merge cypress/reports/*.json > mochawesome.json",
     "generate-reports": "marge  mochawesome.json",
