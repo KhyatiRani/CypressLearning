@@ -13,6 +13,6 @@ workflows:
           record: true
           parallel: true
           parallelism: 2
-          group: smoke tests
           browser: chrome
-          spec: cypress/integration/*
+          post-steps:
+            - run: npm run testcases
