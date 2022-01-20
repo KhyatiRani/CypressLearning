@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
   win: circleci/windows@2.2.0
-  executor:
+     executor:
       name: win/default # executor type
       size: "medium"
 workflows:
@@ -10,13 +10,10 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
-          name: Chrome
           requires:
             - cypress/install
-          executor: cypress/browsers-chrome69
           record: true
           parallel: true
           parallelism: 2
-          browser: chrome
           post-steps:
             - run: npm run testcases
