@@ -1,10 +1,6 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-  win: circleci/windows@2.2.0
-     executor:
-      name: win/default # executor type
-      size: "medium"
 workflows:
   build:
     jobs:
