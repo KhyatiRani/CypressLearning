@@ -27,11 +27,5 @@ workflows:
           
             - run: npm run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6
             - run: npm run testcases
-          parallelism: 4
-          group: 4 machines
-      - cypress/run:
-          executor: with-chrome
-          browser: chrome
-          name: Chrome
-          requires:
-            - cypress/install
+          parallelism: 2
+          group: 2 machines
