@@ -1,4 +1,5 @@
 //Open Cypress Test Runner dashboard:npm run test
+/// <reference types="cypress" />
 import homePage from '../pageObject/homePage'
 
 describe('Check the Page Navigation',()=>{
