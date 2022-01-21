@@ -13,7 +13,7 @@ const hp=new homePage()
         hp.visit()
       
       })
-      it('Verify Page title',()=>{
+      it('Verify Page title',{ tags: '@smoke' },()=>{
         hp.getPageTitle().should('contains','QA')
       })
     

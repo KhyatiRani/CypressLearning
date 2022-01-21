@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 3,
+    "failures": -2,
+    "start": "2022-01-20T10:51:37.076Z",
+    "end": "2022-01-20T10:52:09.828Z",
+    "duration": 32752,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 42.857142857142854,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "59e524ce-ee85-40d4-a3e9-0bc007dc512d",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_02.spec.js",
+      "file": "cypress/integration/testcases/testcase_02.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 19370,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'QA');",
+              "err": {},
+              "uuid": "dba08675-6f34-4893-9362-181f6f31bbf8",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to \"SERVICES\" page",
+              "fullTitle": "Check the Page Navigation visits to \"SERVICES\" page",
+              "timedOut": null,
+              "duration": 8352,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigatetoServicesPage();",
+              "err": {},
+              "uuid": "b3e6f094-884f-46f4-8f29-4ab19002ac5f",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"Functional Testing Services Overview\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"Functional Testing Services Overview\" is present on that page",
+              "timedOut": null,
+              "duration": 222,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.verifyTheContent().contains('Functional Testing Services Overview');",
+              "err": {},
+              "uuid": "28ad18d6-a702-4db1-901b-0601b6675e44",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to \"SERVICES\" page",
+              "fullTitle": "Check the Page Navigation visits to \"SERVICES\" page",
+              "timedOut": null,
+              "duration": 4693,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigateToQuotePage();",
+              "err": {},
+              "uuid": "e3e310d5-eb77-414e-af3c-7833b624ddf5",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Gets the input field and inputs text",
+              "fullTitle": "Check the Page Navigation Gets the input field and inputs text",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "5376cec0-795c-44a4-b824-babb99ff962a",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select the location from drop down list",
+              "fullTitle": "Check the Page Navigation Select the location from drop down list",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "30197838-9a40-45cc-91d7-f40195dbe01a",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"Request For Quote\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"Request For Quote\" is present on that page",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "e9279a6c-2b13-4440-b110-83d4072e4437",
+              "parentUUID": "46c10a7c-cda4-47fc-8d7c-d25c73d172f6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dba08675-6f34-4893-9362-181f6f31bbf8",
+            "b3e6f094-884f-46f4-8f29-4ab19002ac5f",
+            "28ad18d6-a702-4db1-901b-0601b6675e44",
+            "e3e310d5-eb77-414e-af3c-7833b624ddf5"
+          ],
+          "failures": [],
+          "pending": [
+            "5376cec0-795c-44a4-b824-babb99ff962a",
+            "30197838-9a40-45cc-91d7-f40195dbe01a",
+            "e9279a6c-2b13-4440-b110-83d4072e4437"
+          ],
+          "skipped": [],
+          "duration": 32637,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

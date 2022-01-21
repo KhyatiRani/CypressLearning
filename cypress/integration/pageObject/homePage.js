@@ -4,6 +4,11 @@
    class homePage{
    visit(){
       cy.visit('/')
+         
+      
+      //cy.viewport(320, 480)
+      //cy.viewport('iphone-5')
+    
      // cy.get('img').should('have.attr', 'alt').should('include','QA InfoTech Logo')
      
       //;[cy.get('[alt="QA InfoTech Logo"]').should('have.attr', 'href', '/Updated_QAIT_logo-1.png')

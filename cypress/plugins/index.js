@@ -29,7 +29,8 @@ function getConfigurationByFile(file) {
 /**
  * @type {Cypress.PluginConfig}
  */
-
+//https://github.com/cypress-io/cypress-grep
+// cypress/plugin/index.js
 
 
 
