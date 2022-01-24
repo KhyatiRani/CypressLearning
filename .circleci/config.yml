@@ -12,8 +12,23 @@ jobs:
       - browser-tools/install-chrome
       - node/install-packages
       - run:
-          name: Run TestCafe tests on headless Chrome
+          name: Run tests on headless Chrome
           command: npm run cy:chrome
+      - run:
+          name: Running cypress tests to generate reports
+          command: npm run finaltest 
+            
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_artifacts:
+          path: mochawesome-report
+      - persist_to_workspace:
+          root: mochawesome-report
+          paths:
+            - test4.json
+            - test4.html
 
   edge:
     docker:
