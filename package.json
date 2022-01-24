@@ -182,6 +182,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
+    "@bahmutov/cy-api": "^1.6.2",
     "@cypress/webpack-preprocessor": "^5.11.0",
     "allure-commandline": "^2.13.8",
     "babel-loader": "^8.2.3",
