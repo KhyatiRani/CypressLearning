@@ -16,7 +16,7 @@ const hp=new homePage()
       
       })
 
-      it.only('Handling new Browser Window',() =>{
+      it.skip('Handling new Browser Window',() =>{
         const pop_url = "https://www.youtube.com/"
     
         cy.get(':nth-child(3) > .MuiTypography-root > .MuiSvgIcon-root').click()
