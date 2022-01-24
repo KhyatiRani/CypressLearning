@@ -13,7 +13,7 @@
     "testcases": "npm run testcase1 && npm run testcase2",
     "merge-reports": "mochawesome-merge cypress/reports/*.json > mochawesome.json",
     "generate-reports": "marge  mochawesome.json",
-    "finaltest": "npm run testcases && npm run merge-reports && npm run generate-reports",
+    "finaltest": "npm run testcase1 && npm run merge-reports && npm run generate-reports",
     "configFile": "cypress run --config-file dev.json",
     "qa": "cypress run  --env configFile=dev ",
     "dev": "cypress run --config integrationFolder=cypress/integration/testcases --env version=dev",
