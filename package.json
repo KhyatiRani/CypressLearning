@@ -5,11 +5,11 @@
   "scripts": {
     "key": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
     "open": "cypress open",
-    "cy:chrome": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/Chrome-69 --browser chrome",
+    "cy:chrome": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/Chrome-69 --browser chrome ",
     "cy:edge": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Mac/Chrome-70 --browser edge",
     "runs": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
     "testcase1": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_01 --spec ./cypress/integration/testcases/testcase_01.spec.js   --parallel",
-    "testcase2": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_02 --spec ./cypress/integration/testcases/**/*  --parallel",
+    "testcase2": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_02 --spec ./cypress/integration/testcases/**/*  --parallel --browser chrome --headed",
     "testcases": "npm run testcase1 && npm run testcase2",
     "merge-reports": "mochawesome-merge cypress/reports/*.json > mochawesome.json",
     "generate-reports": "marge  mochawesome.json",
