@@ -1,29 +1,24 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.3.0
-  browser-tools: circleci/browser-tools@1.1.3
-
-jobs:
-  chrome:
-    docker:
-      - image: cimg/node:12.22-browsers
-    steps:
-      - checkout
-      - browser-tools/install-chrome
-      - node/install-packages
-      - run:
-          name: Run tests on headless Chrome
-          command: npm run testcase2 --record --group 2x-chrome chrome --parallel 
-      - run:
-          name: Run testcase 2
-          command: npm run testcase1 --record  --parallel  
-        
-      - run: npx cypress info
+  cypress: cypress-io/cypress@1
+  win: circleci/windows@2.2.0
+  jobs:
+    4x-electron: # name of your job
 
 workflows:
-  end-to-end-tests:
+  build:
     jobs:
-      - chrome
+      - cypress/install
+      - cypress/run:
+
+          name: 3 machines
+          requires:
+            - cypress/install
+          post-steps:
+            - run: npm run testcase2
+          parallelism: 3
+          group: 3 machines
+      
       
     
       
