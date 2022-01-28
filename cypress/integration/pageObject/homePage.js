@@ -6,7 +6,7 @@
       cy.visit('/')
       //cy.get('.custom-logo')
       //cy.compareSnapshot('home-page')
-     // cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo')
+      cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo')
      // cy.get('[id="nava"]').compareSnapshot()
          
       

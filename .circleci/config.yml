@@ -5,7 +5,7 @@ orbs:
 
 
 jobs:
-  testcase1:
+  chrome:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
@@ -15,26 +15,45 @@ jobs:
       - run:
           name: Run tests on headless Chrome
           command: npm run cy:chrome
-  testcase2:
+  firefox:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
       - checkout
-      - browser-tools/install-chrome
+      - browser-tools/install-firefox
       - node/install-packages
       - run:
-          name: Run testcaes2
+          name: Run tests on headless Firefox
           command: npm run cy:firefox 
-      
+
+  edge:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Set up Microsoft Edge
+          command: |
+              curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+              sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+              sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+              sudo apt update
+              sudo apt install microsoft-edge-beta
+      - run:
+          name: Run tests on Microsoft Edge
+          command: npm run cy:edge
 
 workflows:
   end-to-end-tests:
     jobs:
-      - testcase1
-      - testcase2:
+      - chrome
+      - firefox:
           requires:
-            - testcase1
-      
+            - chrome
+      - edge:
+          requires:
+            - firefox
       
     
       
