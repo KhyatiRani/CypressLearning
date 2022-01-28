@@ -14,6 +14,7 @@ describe('Visuals', () => {
         cy.compareSnapshot('Home Page', {
             capture: 'fullPage'}, { timeout: 30000 }
           )
+          
             
     })
  

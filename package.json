@@ -5,8 +5,9 @@
   "scripts": {
     "key": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
     "open": "cypress open",
-    "cy:chrome": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/Chrome-69 --browser chrome ",
-    "cy:edge": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Mac/Chrome-70 --browser edge",
+    "cy:firefox": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/firefox --browser firefox ",
+    "cy:chrome": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/Chrome --browser chrome ",
+    "cy:edge": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Mac/edge --browser edge",
     "runs": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
     "testcase1": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_01 --spec ./cypress/integration/testcases/testcase_01.spec.js   --parallel",
     "testcase2": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group testcases/testcase_02 --spec ./cypress/integration/testcases/**/*  --parallel --browser chrome --headed",
@@ -18,8 +19,8 @@
     "qa": "cypress run  --env configFile=dev ",
     "dev": "cypress run --config integrationFolder=cypress/integration/testcases --env version=dev",
     "de": "cypress run --config --env version=qa",
-    "base": "cypress run --env type=base --config screenshotsFolder=cypress/snapshots/base  --spec ./cypress/integration/testcases/image_diff.spec.js --headed",
-    "actual": "cypress run  cypress run --env type=actual --spec ./cypress/integration/testcases/image_diff.spec.js --headed"
+    "base": "cypress run --env type=base --spec ./cypress/integration/testcases/image_diff.spec.js --headed",
+    "actual": "cypress run  run --env type=actual --spec ./cypress/integration/testcases/image_diff.spec.js --headed"
   },
   "author": "khyati",
   "license": "ISC",
