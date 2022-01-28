@@ -7,6 +7,7 @@ executors:
     macos:
       xcode: 10.1.0
 
+
 jobs:
   chrome:
     docker:
@@ -17,11 +18,25 @@ jobs:
       - node/install-packages
       - run:
           name: Run tests on headless Chrome
+<<<<<<< HEAD
           command: npm run cy:chrome 
           executor: mac 
            
       - run: npx cypress info
     
+=======
+          command: npm run cy:chrome
+  firefox:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - checkout
+      - browser-tools/install-firefox
+      - node/install-packages
+      - run:
+          name: Run tests on headless Firefox
+          command: npm run cy:firefox 
+>>>>>>> b6afe9bfbe90edad5f182953e9f4829e08f59077
 
   
 
@@ -29,7 +44,16 @@ workflows:
   end-to-end-tests:
     jobs:
       - chrome
+<<<<<<< HEAD
       
+=======
+      - firefox:
+          requires:
+            - chrome
+      - edge:
+          requires:
+            - firefox
+>>>>>>> b6afe9bfbe90edad5f182953e9f4829e08f59077
       
     
       

@@ -29,7 +29,7 @@ const hp=new homePage()
        
             })
         })
-      it('Verify Page title', ()=>{
+      it.only('Verify Page title', ()=>{
         hp.getPageTitle().should('contains','QA')
       })
 
