@@ -14,7 +14,10 @@ jobs:
       - run:
           name: Run tests on headless Chrome
           command: npm run testcase2 --record --group 2x-chrome chrome --parallel 
-          command: npm run testcase1 --record  --parallel 
+      - run:
+          name: Run testcase 2
+          command: npm run testcase1 --record  --parallel  
+        
       - run: npx cypress info
 
 workflows:
