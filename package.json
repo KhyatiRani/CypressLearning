@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     
+
     "key": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
     "open": "cypress open",
     "cy:chrome": "cypress run --spec ./cypress/integration/testcases/**/*  --parallel --browser chrome",
