@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+
+
 /* const fs = require('fs-extra')
 const path = require('path')
 
@@ -8,9 +10,6 @@ function getConfigurationByFile(file) {
 
   return fs.readJson(pathToConfigFile)
 } */
-
-
-
 
 
 // ***********************************************************
@@ -29,11 +28,15 @@ function getConfigurationByFile(file) {
 /**
  * @type {Cypress.PluginConfig}
  */
+
 //https://github.com/cypress-io/cypress-grep
 // cypress/plugin/index.js
 
-
-
+const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin');
+ 
+module.exports = (on, config)=> {
+  getCompareSnapshotsPlugin(on, config);
+};  
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
@@ -62,3 +65,4 @@ module.exports = (on, config) => {
 
 
 }
+

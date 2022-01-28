@@ -7,8 +7,9 @@ executors:
     macos:
       xcode: 10.1.0
 
+
 jobs:
-  chrome:
+  testcase1:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
@@ -17,6 +18,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run tests on headless Chrome
+<<<<<<< HEAD
           command: npm run cy:chrome 
           executor: mac 
            
@@ -24,11 +26,32 @@ jobs:
     
 
   
+=======
+          command: npm run cy:chrome
+  testcase2:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - checkout
+      - browser-tools/install-chrome
+      - node/install-packages
+      - run:
+          name: Run testcaes2
+          command: npm run cy:firefox 
+      
+>>>>>>> 115fc15fca8c3578d557a9aec8f9a01f8c8f5d59
 
 workflows:
   end-to-end-tests:
     jobs:
+<<<<<<< HEAD
       - chrome
+=======
+      - testcase1
+      - testcase2:
+          requires:
+            - testcase1
+>>>>>>> 115fc15fca8c3578d557a9aec8f9a01f8c8f5d59
       
       
     
