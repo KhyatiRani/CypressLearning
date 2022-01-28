@@ -11,6 +11,7 @@ const hp=new homePage()
       globalThis.data=data
       })
     })
+    
       before('Visits the URL page', () => {
         hp.visit()
       
