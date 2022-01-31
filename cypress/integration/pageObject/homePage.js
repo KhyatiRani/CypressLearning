@@ -2,11 +2,52 @@
    let data=require("../../fixtures/testData.json")
   
    class homePage{
+
    visit(){
-      cy.visit('/')
+      
+  const person = (pname, ms) => {
+   console.log('Promise begin..')
+   return new Promise(resolve => {
+     setTimeout(() => {
+       console.log('Promise finished...')
+       resolve({
+         name: pname
+       }, ms)
+     })
+   })
+ }
+      cy.visit('/').then(() => {
+         let p = person("abc", 30)
+         cy.wrap(p)
+       })
+
+
+      //Cypress  wrap command
+      let name= "hello"
+      cy.wrap(name).should('eq','hello')
+
+      //Cypress 
+
+
+
+      // let arr=[]
+      //console.log('first log')
+     // cy.get(or.homePage.toggleIconOpen).click()
+      //console.log('2nd log')
+     /* cy.get('a').each((al)=>{
+      arr.push(al.text)
+      }).then(()=>{
+         console.log(`log count - ${arr.length}`) 
+         console.log(`log text string - ${arr.join(",  ")}`)
+
+      }) */
+      
+     // cy.get(or.homePage.aboutLink).click()
+      //console.log('3rd log')
+      //cy.get(or.homePage.teamLink).click()
       //cy.get('.custom-logo')
       //cy.compareSnapshot('home-page')
-      cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo')
+      //cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo')
      // cy.get('[id="nava"]').compareSnapshot()
          
       
@@ -36,6 +77,10 @@
       cy.get(or.homePage.toggleIconOpen).click()
       cy.get(or.homePage.aboutLink).click()
       cy.get(or.homePage.teamLink).click()
+      .then(() => {
+         console.log("This is to check the log")  // Log to check the async behaviour
+     });
+      console.log('checking the log')
       //cy.contains('Team').click()
       //cy.get('img').should('have.attr', 'class').should('include','custom-logo lazy loaded')
      
