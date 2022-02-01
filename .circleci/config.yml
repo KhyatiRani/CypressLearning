@@ -13,7 +13,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run TestCafe tests on headless Chrome
-          command: npm run testcase2
+          command: npm run testcase2 --browser chrome
 
   firefox:
     docker:
@@ -24,7 +24,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run TestCafe tests on headless Firefox
-          command: npm run testcase2
+          command: npm run testcase2 --browser firefox
 
   edge:
     docker:
@@ -42,7 +42,7 @@ jobs:
               sudo apt install microsoft-edge-beta
       - run:
           name: Run TestCafe tests on Microsoft Edge
-          command: npm run testcase2
+          command: npm run testcase2 --browser edge
 
 workflows:
   end-to-end-tests:
