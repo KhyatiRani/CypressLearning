@@ -46,6 +46,8 @@ describe('Verify get Request', function () {
                     'cookie': cookies
                 },
 
+                body:{totalpost:5}
+
             }).then((res1) => {
                 expect(res1).to.have.property('status', 200)
                 expect(res1.body).to.not.be.null
@@ -120,7 +122,7 @@ describe('Verify get Request', function () {
             })
 
 
-            it.only('Validate get request', () => {
+            it('Validate get request', () => {
                 cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/login'
                     , { fixture: 'loginData.json' }).as('login')
 
@@ -142,7 +144,7 @@ describe('Verify get Request', function () {
 
             })
 
-            it.only('Validate get request for Roll Up module', () => {
+            it('Validate get request for Roll Up module', () => {
                 cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/loan-portfolios/1ec7d8ea-e93c-67c4-b81b-0a64d1216297/loan-accounts'
   ,).as('rollup')
 

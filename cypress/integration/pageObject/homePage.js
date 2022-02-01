@@ -4,36 +4,11 @@
    class homePage{
 
    visit(){
-      
-  const person = (pname, ms) => {
-   console.log('Promise begin..')
-   return new Promise(resolve => {
-     setTimeout(() => {
-       console.log('Promise finished...')
-       resolve({
-         name: pname
-       }, ms)
-     })
-   })
- }
-      cy.visit('/').then(() => {
-         let p = person("abc", 30)
-         cy.wrap(p)
-       })
-
-
-      //Cypress  wrap command
-      let name= "hello"
-      cy.wrap(name).should('eq','hello')
-
-      //Cypress 
-
-
-
+      cy.visit('/')
       // let arr=[]
-      //console.log('first log')
-     // cy.get(or.homePage.toggleIconOpen).click()
-      //console.log('2nd log')
+      console.log('first log')
+     cy.get(or.homePage.toggleIconOpen).click()
+      console.log('2nd log')
      /* cy.get('a').each((al)=>{
       arr.push(al.text)
       }).then(()=>{
@@ -42,9 +17,9 @@
 
       }) */
       
-     // cy.get(or.homePage.aboutLink).click()
-      //console.log('3rd log')
-      //cy.get(or.homePage.teamLink).click()
+      cy.get(or.homePage.aboutLink).click()
+      console.log('3rd log')
+      cy.get(or.homePage.teamLink).click()
       //cy.get('.custom-logo')
       //cy.compareSnapshot('home-page')
       //cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo')
