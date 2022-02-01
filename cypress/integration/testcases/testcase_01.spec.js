@@ -28,7 +28,7 @@ describe('Check the Page Navigation', () => {
 
     })
   })
-  it.only('Verify Page title', () => {
+  it('Verify Page title', () => {
     hp.getPageTitle().should('contains', 'QA')
   })
 
