@@ -13,7 +13,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run TestCafe tests on headless Chrome
-          command: npm run chrome1 | circleci tests split --split-by=timings
+          command: npm run chrome1
       
 
 workflows:
