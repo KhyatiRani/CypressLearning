@@ -1,61 +1,31 @@
 version: 2.1
+
 orbs:
-  node: circleci/node@4.3.0
-  
-  win: circleci/windows@2.2.0
+  win: circleci/windows@1.0.0
+
 jobs:
-  chrome:
+  build-windows:
     executor:
-       name: win/default # executor type
-       size: "medium"
-    
+      name: win/vs2019
+      shell: bash.exe
     steps:
       - checkout
-      - node/install-packages
-      - run:
-          command: npm install
-      - run: 
-          name: Run testcase on headless Chrome
-          command: npm run testcase2 --browser chrome
-         
-
-  firefox:
+      - run: npm run testcases1
+  build-macos:
+    macos:
+       xcode: 11.0.0
+    steps:
+      - checkout
+      - run: npm run testcases1
+  build-linux:
     docker:
-      - image: cimg/node:12.22-browsers
+      - image: fpco/stack-build:lts
     steps:
       - checkout
-      - browser-tools/install-firefox
-      - node/install-packages
-      - run:
-          name: Run TestCafe tests on headless Firefox
-          command: npm run testcase1 --browser firefox
-
-  edge:
-    docker:
-      - image: cimg/node:12.22-browsers
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          name: Set up Microsoft Edge
-          command: |
-              curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-              sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-              sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
-              sudo apt update
-              sudo apt install microsoft-edge-beta
-      - run:
-          name: Run TestCafe tests on Microsoft Edge
-          command: npm run testcase2 --browser edge
-
+      - run: npm run testcases1
 workflows:
-  end-to-end-tests:
+  build-and-deploy:
     jobs:
-      - chrome
-      - firefox 
-      - edge:
-         requires:
-            - firefox
-             
-
-         
+    - build-windows
+    - build-macos
+    - build-linux 
