@@ -23,13 +23,6 @@ workflows:
           spec: './cypress/integration/testcases/testcase_01.spec.js'
           requires:
             - cypress/install
-          
-      - cypress/run:
-          executor: with-chrome
-          browser: firefox
-          name: Firefox
-          spec: './cypress/integration/testcases/testcase_01.spec.js'
-          requires:
-            - cypress/install
+        
          
           
