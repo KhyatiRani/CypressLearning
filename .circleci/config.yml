@@ -24,7 +24,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run TestCafe tests on headless Firefox
-          command: npm run testcase2 --browser firefox
+          command: npm run testcase1 --browser firefox
 
   edge:
     docker:

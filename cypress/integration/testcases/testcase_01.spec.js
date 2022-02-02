@@ -38,7 +38,7 @@ describe('Check the Page Navigation', () => {
   })
 
   it('checks if "About QA InfoTech" is present on that page', () => {
-    hp.checkContent().contains('About QA InfoTech')
+    hp.checkContent().contains('xyz')
   })
 
 
