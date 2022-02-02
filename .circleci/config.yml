@@ -1,31 +1,14 @@
-version: 2.1
+version: 2.1 # Use version 2.1 to enable orb usage.
 
 orbs:
-  win: circleci/windows@1.0.0
+  win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
 
 jobs:
-  build-windows:
-    executor:
-      name: win/vs2019
-      shell: bash.exe
+  build: # name of your job
+    executor: win/default # executor type
+
     steps:
+      # Commands are run in a Windows virtual machine environment
       - checkout
-      - run: npm run testcase1
-  build-macos:
-    macos:
-       xcode: 11.0.0
-    steps:
-      - checkout
-      - run: npm run testcase1
-  build-linux:
-    docker:
-      - image: fpco/stack-build:lts
-    steps:
-      - checkout
-      - run: npm run testcase1
-workflows:
-  build-and-deploy:
-    jobs:
-    - build-windows
-    - build-macos
-    - build-linux 
+      - run: npm run testcase2 
+    
