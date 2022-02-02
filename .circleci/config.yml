@@ -12,12 +12,12 @@ jobs:
     
     steps:
       - checkout
-      - browser-tools/install-chrome
       - node/install-packages
       - run:
-          name: Run TestCafe tests on headless Chrome
+          command: npm install
+      - run: 
+          name: Run testcase on headless Chrome
           command: npm run testcase2 --browser chrome
-          
          
 
   firefox:
