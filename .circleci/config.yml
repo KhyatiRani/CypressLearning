@@ -25,7 +25,7 @@ workflows:
             - cypress/install
           
       - cypress/run:
-          executor: with-chrome
+          executor: win/default  
           browser: chrome
           name: Chrome
           spec: './cypress/integration/testcases/testcase_01.spec.js'
