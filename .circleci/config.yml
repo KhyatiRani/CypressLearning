@@ -28,7 +28,7 @@ workflows:
           name: Firefox
           requires:
             - cypress/install
-          executor: cypress/browsers-chrome90-ff88
+          executor: with-chrome
           start: npm start
           browser: firefox
           post-steps:
