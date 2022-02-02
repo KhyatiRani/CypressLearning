@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.29.0
+  cypress: cypress-io/cypress@1
   win: circleci/windows@2.2.0
 
   jobs:
@@ -22,8 +22,7 @@ workflows:
           name: Chrome
           requires:
             - cypress/install
-          post-steps:
-            - run: npm run testcase2
+          spec: './cypress/integration/testcases/testcase_01.spec.js'
       - cypress/run:
           name: Firefox
           requires:
@@ -31,5 +30,4 @@ workflows:
           executor: with-chrome
           start: npm start
           browser: firefox
-          post-steps:
-            - run: npm run testcase2
+          spec: './cypress/integration/testcases/testcase_01.spec.js'
