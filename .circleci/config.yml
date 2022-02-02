@@ -10,19 +10,19 @@ jobs:
       shell: bash.exe
     steps:
       - checkout
-      - run: npm run testcases1
+      - run: npm run testcase1
   build-macos:
     macos:
        xcode: 11.0.0
     steps:
       - checkout
-      - run: npm run testcases1
+      - run: npm run testcase1
   build-linux:
     docker:
       - image: fpco/stack-build:lts
     steps:
       - checkout
-      - run: npm run testcases1
+      - run: npm run testcase1
 workflows:
   build-and-deploy:
     jobs:
