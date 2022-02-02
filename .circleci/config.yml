@@ -20,14 +20,16 @@ workflows:
           executor: with-chrome
           browser: chrome
           name: Chrome
+          spec: './cypress/integration/testcases/testcase_01.spec.js'
           requires:
             - cypress/install
-          spec: './cypress/integration/testcases/testcase_01.spec.js'
+          
       - cypress/run:
+          executor: with-chrome
+          browser: firefox
           name: Firefox
+          spec: './cypress/integration/testcases/testcase_01.spec.js'
           requires:
             - cypress/install
-          executor: with-chrome
-          start: npm start
-          browser: firefox
-          spec: './cypress/integration/testcases/testcase_01.spec.js'
+         
+          
