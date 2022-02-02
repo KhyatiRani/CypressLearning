@@ -12,6 +12,7 @@ jobs:
     steps:
      - checkout
      - run: npm install
+     - run: npm install -- browser chrome 
      - run: npm run testcase2 browser chrome
       
 
@@ -48,7 +49,7 @@ workflows:
   end-to-end-tests:
     jobs:
       - chrome
-      - firefox 
+      - firefox
       - edge:
          requires:
             - firefox
