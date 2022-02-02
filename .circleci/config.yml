@@ -28,6 +28,5 @@ workflows:
           executor: win/default  
           browser: chrome
           name: Chrome
-          spec: './cypress/integration/testcases/testcase_01.spec.js'
-          requires:
-            - cypress/install
+          spec: './cypress/integration/testcases/testcase_01.spec.js --chrome browser'
+        
