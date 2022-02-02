@@ -13,32 +13,21 @@ describe('Verify get Request', function () {
 
     })
     it.only('POST-create', () => {
-        const item = { 'email': 'abc@gmail.com', 'password': 'FuelF@rFuture123' }
-        //const header = {"Content-Type": "application/json"}
-        //cy.request('POST','https://api.nightly.futurefuel.io/api/1/auth/login', item,header)
+        //const item = { 'email': 'abc@gmail.com', 'password': 'FuelF@rFuture123' }
         cy.api({
             method: 'POST',
             url: 'https://api.nightly.futurefuel.io/api/1/auth/login',
 
-            // baseUrl is prepend to URL
-            form: true, // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers
             body: {
                 email: 'abc@gmail.com',
                 password: 'FuelF@rFuture123',
             },
             headers: {
                 'Content-Type': 'application/json'
-                // },
-
-                /*   }).its('body')
-                  .its('data')
-                  .should('include', {}) */
             },
         }).then((response) => {
-            // all your assertions should be placed here!!
             const cookies = response.headers['set-cookie'];
-            // cookies.forEach(cookie => {
-            // parse cookies and do what you need with them
+
 
             cy.api({
                 url: 'https://api.nightly.futurefuel.io/api/1/users/banks',
@@ -46,7 +35,7 @@ describe('Verify get Request', function () {
                     'cookie': cookies
                 },
 
-                body:{totalpost:5}
+                body: { totalpost: 5 }
 
             }).then((res1) => {
                 expect(res1).to.have.property('status', 200)
@@ -61,9 +50,6 @@ describe('Verify get Request', function () {
             cy.api({
                 method: 'POST',
                 url: 'https://api.nightly.futurefuel.io/api/1/plaid/link-token',
-
-                // baseUrl is prepend to URL
-                form: true, // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers
                 body: {
                     products: ['transactions'],
                     linkCustomizationName: 'spending',
@@ -73,12 +59,6 @@ describe('Verify get Request', function () {
 
                     'cookie': cookies
                 },
-
-                /*  }).its('body')
-                     .its('data')
-                     .should('include', {}) */
-
-
 
             }).then((response1) => {
                 expect(response1).to.have.property('status', 200)
