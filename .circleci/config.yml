@@ -17,18 +17,18 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
+          executor: with-chrome
+          browser: chrome
           name: Chrome
           requires:
             - cypress/install
-          executor: with-chrome
-          browser: chrome
           post-steps:
             - run: npm run testcase2
       - cypress/run:
           name: Firefox
           requires:
             - cypress/install
-          executor: cypress/browsers-chrome73-ff68
+          executor: cypress/browsers-chrome90-ff88
           start: npm start
           browser: firefox
           post-steps:
