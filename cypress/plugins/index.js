@@ -32,11 +32,11 @@ function getConfigurationByFile(file) {
 //https://github.com/cypress-io/cypress-grep
 // cypress/plugin/index.js
 
-const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin');
+//const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin');
  
-module.exports = (on, config)=> {
-  getCompareSnapshotsPlugin(on, config);
-};  
+//module.exports = (on, config)=> {
+ // getCompareSnapshotsPlugin(on, config);
+//};  
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
@@ -62,7 +62,7 @@ module.exports = (on, config) => {
     return config
 
   
-
-
 }
+
+
 

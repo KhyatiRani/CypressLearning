@@ -21,8 +21,8 @@
     "qa": "cypress run  --env configFile=dev ",
     "dev": "cypress run --config integrationFolder=cypress/integration/testcases --env version=dev",
     "de": "cypress run --config --env version=qa",
-    "base": "cypress run --env type=base --spec ./cypress/integration/testcases/image_diff.spec.js --headed",
-    "actual": "cypress run  run --env type=actual --spec ./cypress/integration/testcases/image_diff.spec.js --headed"
+    "base": "cypress run --env type=base --config screenshotsFolder=cypress/snapshots/base --headed",
+    "actual": "cypress run  run --env type=actual --headed"
   },
   "author": "khyati",
   "license": "ISC",
@@ -36,6 +36,7 @@
     "fs-extra": "^10.0.0",
     "jsonfile": "^6.1.0",
     "npm-run-path": "^4.0.1",
+    "pixelmatch": "^5.2.1",
     "url": "^0.11.0"
   },
   "devDependencies": {
