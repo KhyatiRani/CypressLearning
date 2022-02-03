@@ -14,6 +14,7 @@ jobs:
     steps:
       # Commands are run in a Windows virtual machine environment
       - checkout
+      - run: systeminfo
       - run:
           name: "Check docker"
           shell: powershell.exe
