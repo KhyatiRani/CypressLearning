@@ -5,11 +5,11 @@ orbs:
 
 jobs:
   build: # name of your job
-  
     executor:
       name: win/default # executor type
       size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
       shell: powershell.exe
+    
     
     steps:
       # Commands are run in a Windows virtual machine environment
@@ -18,8 +18,10 @@ jobs:
           name: "Check docker"
           shell: powershell.exe
           command: |
-            docker info
-            docker run hello-world:nanoserver-1809
+              curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+              sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+              sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+              sudo apt update
+              sudo apt install microsoft-edge-beta
       - run: npm install
-      - run: npm install edge
       - run: npm run edge1 --browser edge
