@@ -1,12 +1,36 @@
 version: 2.1
-orbs:
-  win: circleci/windows@2.2.0
+
+executors:
+  linux-13:
+    docker:
+      - image: cimg/node:13.13
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+  macos: &macos-executor
+    macos:
+      xcode: 12.5.1
+
 jobs:
-  build:
-    executor:
-      name: win/default
+  test:
+    parameters:
+      os:
+        type: executor
+      node-version:
+        type: string
+    executor: << parameters.os >>
     steps:
-      # default shell is Powershell
-      - run:
-         command: npm run testcase2
-         shell: cmd.exe
+      - checkout
+      - when:
+          condition:
+            equal: [ *macos-executor, << parameters.os >> ]
+          steps:
+            - run: echo << parameters.node-version >>
+      - run: echo 0
+
+workflows:
+  all-tests:
+    jobs:
+      - test:
+          os: macos
+          node-version: "13.13.0"
