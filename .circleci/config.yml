@@ -38,8 +38,11 @@ jobs:
 workflows:
   end-to-end-tests:
     jobs:
-      - edge:
-          type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
+      - edge
+      - hold:
+          type: approval
+          requires:
+            - edge
       - chrome:
           requires: # We only run the "hold" job when test2 has succeeded
-           - edge
+           - hold
