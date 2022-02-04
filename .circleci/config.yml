@@ -1,3 +1,5 @@
+
+
 version: 2.1
 orbs:
   node: circleci/node@4.3.0
@@ -12,19 +14,8 @@ jobs:
       - browser-tools/install-chrome
       - node/install-packages
       - run:
-          name: Run TestCafe tests on headless Chrome
-          command: npm run testcase2 --browser chrome
-
-  firefox:
-    docker:
-      - image: cimg/node:12.22-browsers
-    steps:
-      - checkout
-      - browser-tools/install-firefox
-      - node/install-packages
-      - run:
-          name: Run TestCafe tests on headless Firefox
-          command: npm run testcase1 --browser firefox
+          name: Run tests on headless Chrome
+          command: npm run testcase1
 
   edge:
     docker:
@@ -42,15 +33,16 @@ jobs:
               sudo apt install microsoft-edge-beta
       - run:
           name: Run TestCafe tests on Microsoft Edge
-          command: npm run testcase2 --browser edge
+          command: npm run testcase1
 
 workflows:
   end-to-end-tests:
     jobs:
-      - chrome
-      - firefox 
-      - edge:
-         requires:
-            - firefox
-
-         
+      - edge
+      - hold:
+          type: approval
+          requires:
+            - edge
+      - chrome:
+          requires: # We only run the "hold" job when test2 has succeeded
+           - hold
