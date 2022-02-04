@@ -21,7 +21,7 @@ const hp=new homePage()
         hp.navigatetoServicesPage()
       })
       it('checks if "Functional Testing Services Overview" is present on that page',()=>{
-        hp.verifyTheContent().contains('Functional Testing Services Overview')
+        hp.verifyTheContent().contains('abc')
       })
       it('visits to "SERVICES" page',()=>{
         hp.navigateToQuotePage()
