@@ -14,6 +14,7 @@ jobs:
       - run:
           name: Run tests on headless Chrome
           command: npm run testcase2
+          when: always
 
   firefox:
     docker:
@@ -25,6 +26,7 @@ jobs:
       - run:
           name: Run tests on headless Firefox
           command: npm run testcase1
+          when: always
 
   edge:
     docker:
@@ -42,8 +44,8 @@ jobs:
               sudo apt install microsoft-edge-beta
       - run:
           name: Run TestCafe tests on Microsoft Edge
-          command: npm run testcase1 
-
+          command: npm run testcase1
+          when: always
 workflows:
   end-to-end-tests:
     jobs:
@@ -52,9 +54,10 @@ workflows:
          requires: 
            - chrome
       - edge:
-        when:always:
          requires:
             - firefox
+
+               
                
 
          
