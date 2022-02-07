@@ -1,69 +1,55 @@
-version: 2.1
-orbs:
-  node: circleci/node@4.3.0
-  win: circleci/windows@2.2.0 
-  browser-tools: circleci/browser-tools@1.1.3
+version: 2
 jobs:
   build:
-    working_directory: ~/project
+    working_directory: ~/tmp
     docker:
-      - image: cimg/node:12.22-browsers
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
     steps:
       - checkout
-      - node/install-packages
-      - persist_to_workspace: 
+      - run: npm ci
+      - persist_to_workspace:
           root: ~/
           paths:
-            - "project"
-  chrome:
-    working_directory: ~/project
+            - tmp
+  test1:
+    working_directory: ~/tmp
     docker:
-      - image: cimg/node:12.22-browsers
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
     steps:
       - attach_workspace:
-         at: ~/
-      - browser-tools/install-chrome
+          at: ~/
       - run:
-          name: Run tests on headless chrome
-          command: npm run finaltest
-      - store_artifacts:
-          path: mochawesome-report
-      - persist_to_workspace:
-          root: mochawesome-report
-          paths:
-            - test1.json
-            - test1.html
-  firefox:
-    working_directory: ~/project
+          name: Running cypress tests 1
+          command: npm run testcase1
+     
+  test2:
+    working_directory: ~/tmp
     docker:
-      - image: cimg/node:12.22-browsers
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
     steps:
       - attach_workspace:
-         at: ~/
-      - browser-tools/install-firefox
+          at: ~/
       - run:
-          name: Run tests on headless firefox
-          command: npm run finaltest
-      - store_artifacts:
-          path: mochawesome-report
-      - persist_to_workspace:
-          root: mochawesome-report
-          paths:
-            - finaltest.json
-            - finaltest.html
+          name: Running cypress tests 2
+          command: npm run testcase2
   
+     
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - chrome:
+      - test1:
           requires:
             - build
-      - firefox:
+      - test2:
           requires:
             - build
-  
-      
-                    
-            
+    
+           
