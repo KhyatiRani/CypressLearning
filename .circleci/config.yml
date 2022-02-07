@@ -13,6 +13,7 @@ jobs:
       - node/install-packages
 
   combine_reports:
+    working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
     steps:
@@ -20,6 +21,7 @@ jobs:
           at: cypress/reports
       - run: ls /tmp/mochawesome-report
   chrome:
+    working_directory: ~/tmp
     docker:
       - image: cimg/node:12.22-browsers
     steps:
@@ -38,6 +40,7 @@ jobs:
             - test1.json
             - test1.html
   firefox:
+    working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
     steps:
