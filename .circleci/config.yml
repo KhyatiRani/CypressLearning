@@ -14,13 +14,8 @@ jobs:
       - run:
           name: Running cypress tests to generate reports
           command: npm run testcase1 
-            
       - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
-      - store_artifacts:
-          path: cypress/mochawesome-report
+           path: mochawesome-report
       - persist_to_workspace:
           root: cypress/mochawesome-report
           paths:
