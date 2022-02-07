@@ -65,7 +65,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 2
-          command: npm run  finaltest
+          command: npm run testcase1
       - store_artifacts:
           path: mochawesome-report
       - persist_to_workspace:
