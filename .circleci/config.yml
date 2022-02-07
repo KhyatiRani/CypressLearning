@@ -48,12 +48,12 @@ jobs:
           name: Run tests on headless firefox
           command: npm run finaltest
       - store_artifacts:
-          path: cypress/reports
+          path: mochawesome-report
       - persist_to_workspace:
-          root: cypress/reports
+          root: mochawesome-report
           paths:
-            - test2.json
-            - test2.html
+            - finaltest.json
+            - finaltest.html
   
 workflows:
   version: 2
