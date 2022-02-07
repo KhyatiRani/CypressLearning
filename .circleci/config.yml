@@ -40,6 +40,7 @@ jobs:
           name: Run tests on Microsoft Edge
           command: npm run testcase1
 
+
 workflows:
   end-to-end-tests:
     jobs:
