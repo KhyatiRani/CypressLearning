@@ -4,7 +4,7 @@
 //compareSnapshotCommand();
 
 
-
+require('@cypress/snapshot').register()
 
 
 

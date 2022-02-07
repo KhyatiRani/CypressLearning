@@ -4,11 +4,17 @@
    class homePage{
 
    visit(){
-      cy.visit('/')
+      cy.visit('https://demoblaze.com/')
+   }
+   home(){
+      //https://www.cypress.io/blog/2018/01/16/end-to-end-snapshot-testing/
+      cy.contains('Home').click()
+      cy.get('[id="nava"]').snapshot()
+   
       // let arr=[]
-      console.log('first log')
-     cy.get(or.homePage.toggleIconOpen).click()
-      console.log('2nd log')
+      //console.log('first log')
+     //cy.get(or.homePage.toggleIconOpen).click()
+     // console.log('2nd log')
      /* cy.get('a').each((al)=>{
       arr.push(al.text)
       }).then(()=>{
@@ -17,9 +23,9 @@
 
       }) */
       
-      cy.get(or.homePage.aboutLink).click()
-      console.log('3rd log')
-      cy.get(or.homePage.teamLink).click()
+      //cy.get(or.homePage.aboutLink).click()
+      //console.log('3rd log')
+      //cy.get(or.homePage.teamLink).click()
       //cy.get('.custom-logo')
       //cy.compareSnapshot('home-page')
       //cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo')
@@ -44,7 +50,7 @@
       //cy.get('[alt="QA InfoTech Logo"]').compareSnapshot('logo',0.1)
       //cy.get('[id="nava"]').compareSnapshot()
     
-      }
+   }
    getPageTitle(){
       return cy.title()
    }

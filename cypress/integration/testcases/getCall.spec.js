@@ -1,6 +1,20 @@
 /// <reference types="cypress" />
 describe('Verify get Request', function () {
     Cypress.config('baseUrl', 'https://nightly.futurefuel.io')
+
+
+    const add = (a, b) => a + b
+    it.only('adds numbers', () => {
+      cy.wrap(add(2, 3)).snapshot()
+
+      cy.wrap(add(1, 19)).snapshot()
+
+    })
+
+
+
+
+
     it('Validate get request', () => {
         //https://github.com/bahmutov/cy-api
         cy.api({
@@ -12,7 +26,7 @@ describe('Verify get Request', function () {
         })
 
     })
-    it.only('POST-create', () => {
+    it('POST-create', () => {
         //const item = { 'email': 'abc@gmail.com', 'password': 'FuelF@rFuture123' }
         cy.api({
             method: 'POST',

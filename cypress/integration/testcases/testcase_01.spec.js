@@ -16,6 +16,12 @@ describe('Check the Page Navigation', () => {
 
   })
 
+  it.skip('Handling home', () => {
+
+    hp.home()
+  })
+
+
   it.skip('Handling new Browser Window', () => {
     const pop_url = "https://www.youtube.com/"
 
@@ -29,7 +35,7 @@ describe('Check the Page Navigation', () => {
     })
   })
   it('Verify Page title', () => {
-    hp.getPageTitle().should('contains', 'QA')
+    hp.getPageTitle().should('contains', 'STORE')
   })
 
 
