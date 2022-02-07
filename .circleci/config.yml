@@ -14,6 +14,8 @@ jobs:
             - tmp
   combine_reports:
     working_directory: ~/tmp
+    environment:
+          TERM: xterm
     docker:
       - image: 'cypress/base:10'
         environment:
@@ -30,10 +32,15 @@ jobs:
           path: mochareports
   test1:
     working_directory: ~/tmp
+    environment:
+          TERM: xterm
     docker:
       - image: 'cypress/base:10'
     steps:
-
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 1
           command: npm run finaltest 
@@ -46,11 +53,16 @@ jobs:
             - test1.html
   test2:
     working_directory: ~/tmp
+    environment:
+          TERM: xterm
     docker:
       - image: 'cypress/base:10'
       
     steps:
-     
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 2
           command: npm run  finaltest
