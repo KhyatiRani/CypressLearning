@@ -21,6 +21,8 @@ jobs:
           name: Running cypress tests 1
           command: >-
            npm run testcase1
+           
+          when: always
      
       - store_artifacts:
           path: mochawesome-report
@@ -37,6 +39,8 @@ jobs:
           name: Running cypress tests 2
           command: >-
             npm run testcase2
+
+            when: always
       - store_artifacts:
           path: cypress/reports
       - persist_to_workspace:
@@ -52,6 +56,7 @@ jobs:
           name: Running cypress tests 3
           command: >-
             npm run testcase1
+            when: always
       - store_artifacts:
           path: cypress/reports
       - persist_to_workspace:
