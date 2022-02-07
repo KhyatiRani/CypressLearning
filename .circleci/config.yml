@@ -57,7 +57,7 @@ jobs:
           name: Running cypress tests 1
           command: >-
             if $(npm bin)/cypress run --spec
-            cypress/integration/testcases/testcase_02.spec.spec.js --reporter mochawesome
+            cypress/integration/testcases/testcase_02.spec.js --reporter mochawesome
             --reporter-options "reportFilename=test1"; then echo 'pass'; else
             echo 'fail'; fi
       - store_artifacts:
@@ -86,7 +86,7 @@ jobs:
           name: Running cypress tests 2
           command: >-
             if $(npm bin)/cypress run --spec
-            cypress/integration/testcases/testcase_02.spec.spec.js --reporter mochawesome
+            cypress/integration/testcases/testcase_02.spec.js --reporter mochawesome
             --reporter-options "reportFilename=test2"; then echo 'pass'; else
             echo 'fail'; fi
       - store_artifacts:
