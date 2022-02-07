@@ -14,14 +14,9 @@ jobs:
       - node/install-packages
       - run: 
           name: Running cypress tests to generate reports
-          command: npm run testcase1 
+          command: npm run finaltest 
       - store_artifacts:
-          path: /art-1
-          destination: artifact-file
-      - store_artifacts:
-          path: /artifacts
-      - store_artifacts:
-          path: coverage
+          path: mochawesome-report
      
 
 
