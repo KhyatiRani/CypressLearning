@@ -1,79 +1,52 @@
 version: 2.1
 orbs:
   node: circleci/node@4.3.0
-  win: circleci/windows@2.2.0 
   browser-tools: circleci/browser-tools@1.1.3
-jobs:
-  build:
-    docker:
-      - image: cimg/node:12.22-browsers
-    steps:
-      - checkout
-     
-      - node/install-packages
 
-  combine_reports:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-    steps:
-      - attach_workspace:
-          at: cypress/reports
-      - run: ls /tmp/mochawesome-report
+jobs:
   chrome:
-    working_directory: ~/tmp
     docker:
       - image: cimg/node:12.22-browsers
     steps:
       - checkout
-      - node/install-packages
       - browser-tools/install-chrome
       - node/install-packages
       - run:
-          name: Run tests on headless chrome
-          command: npm run testcase1
+          name: Running cypress tests to generate reports
+          command: npm run testcase1 
+            
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
       - store_artifacts:
           path: mochawesome-report
       - persist_to_workspace:
           root: mochawesome-report
           paths:
-            - test1.json
-            - test1.html
-  firefox:
-    working_directory: ~/tmp
+            - test4.json
+            - test4.html
+
+  edge:
     docker:
-      - image: 'cypress/base:10'
+      - image: cimg/node:12.22-browsers
     steps:
       - checkout
       - node/install-packages
-      - browser-tools/install-firefox
-      - node/install-packages
       - run:
-          name: Run tests on headless firefox
+          name: Set up Microsoft Edge
+          command: |
+              curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+              sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+              sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+              sudo apt update
+              sudo apt install microsoft-edge-beta
+      - run:
+          name: Run tests on Microsoft Edge
           command: npm run testcase1
-      - store_artifacts:
-          path: cypress/reports
-      - persist_to_workspace:
-          root: cypress/reports
-          paths:
-            - test2.json
-            - test2.html
-  
+
 workflows:
-  version: 2
-  build_and_test:
+  end-to-end-tests:
     jobs:
-      - build
-      - chrome:
-          requires:
-            - build
-      - firefox:
-          requires:
-            - build
-  
-      - combine_reports:
-          requires:
-            - chrome
-            - firefox
-                    
-            
+      - chrome
+      - edge
