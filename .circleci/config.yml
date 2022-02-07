@@ -23,6 +23,8 @@ jobs:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
+      - checkout
+      - node/install-packages
       - browser-tools/install-chrome
       - node/install-packages
       - run:
@@ -39,6 +41,8 @@ jobs:
     docker:
       - image: 'cypress/base:10'
     steps:
+      - checkout
+      - node/install-packages
       - browser-tools/install-firefox
       - node/install-packages
       - run:
