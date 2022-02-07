@@ -28,11 +28,11 @@ jobs:
       - node/install-packages
       - run:
           name: Run tests on headless chrome
-          command: npm run testcase1
+          command: npm run finaltest
       - store_artifacts:
-          path: mochawesome-report
+          path: cypress/reports
       - persist_to_workspace:
-          root: mochawesome-report
+          root: cypress/reports
           paths:
             - test1.json
             - test1.html
@@ -48,12 +48,12 @@ jobs:
           name: Run tests on headless firefox
           command: npm run finaltest
       - store_artifacts:
-          path: mochawesome-report
+          path: cypress/report
       - persist_to_workspace:
-          root: mochawesome-report
+          root: cypress/report
           paths:
-            - finaltest.json
-            - finaltest.html
+            - test.json
+            - test.html
   
 workflows:
   version: 2
