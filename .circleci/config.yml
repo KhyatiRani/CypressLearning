@@ -4,9 +4,23 @@ jobs:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
     steps:
       - checkout
+      - run: pwd
+      - run: ls
+      - restore_cache:
+          keys:
+            - 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+            - 'v2-deps-{{ .Branch }}-'
+            - v2-deps-
       - run: npm ci
+      - save_cache:
+          key: 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+          paths:
+            - ~/.npm
+            - ~/.cache
       - persist_to_workspace:
           root: ~/
           paths:
@@ -14,8 +28,6 @@ jobs:
             - tmp
   combine_reports:
     working_directory: ~/tmp
-    environment:
-          TERM: xterm
     docker:
       - image: 'cypress/base:10'
         environment:
@@ -32,10 +44,10 @@ jobs:
           path: mochareports
   test1:
     working_directory: ~/tmp
-    environment:
-          TERM: xterm
     docker:
       - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
     steps:
       - attach_workspace:
           at: ~/
@@ -43,7 +55,15 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 1
-          command: npm run finaltest 
+          command: >-
+            if $(npm bin)/cypress run --spec
+            cypress/integration/testcases/testcase_02.spec.spec.js --reporter mochawesome
+            --reporter-options "reportFilename=test1"; then echo 'pass'; else
+            echo 'fail'; fi
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
       - store_artifacts:
           path: mochawesome-report
       - persist_to_workspace:
@@ -53,11 +73,10 @@ jobs:
             - test1.html
   test2:
     working_directory: ~/tmp
-    environment:
-          TERM: xterm
     docker:
       - image: 'cypress/base:10'
-      
+        environment:
+          TERM: xterm
     steps:
       - attach_workspace:
           at: ~/
@@ -65,14 +84,24 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 2
-          command: npm run testcase1
+          command: >-
+            if $(npm bin)/cypress run --spec
+            cypress/integration/testcases/testcase_02.spec.spec.js --reporter mochawesome
+            --reporter-options "reportFilename=test2"; then echo 'pass'; else
+            echo 'fail'; fi
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
       - store_artifacts:
           path: mochawesome-report
       - persist_to_workspace:
           root: mochawesome-report
           paths:
             - test2.json
-            - test2.html   
+            - test2.html
+  
+     
 workflows:
   version: 2
   build_and_test:
@@ -84,9 +113,9 @@ workflows:
       - test2:
           requires:
             - build
-     
+    
       - combine_reports:
           requires:
             - test1
             - test2
-            
+           
