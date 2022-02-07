@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   chrome:
-    working_directory: /tmp
+    
     docker:
       - image: cimg/node:12.22-browsers
     steps:
@@ -16,10 +16,10 @@ jobs:
           name: Running cypress tests to generate reports
           command: npm run testcase1 
       - store_artifacts:
-          path: /tmp/art-1
+          path: /art-1
           destination: artifact-file
       - store_artifacts:
-          path: /tmp/artifacts
+          path: /artifacts
      
 
 
