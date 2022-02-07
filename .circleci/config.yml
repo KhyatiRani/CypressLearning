@@ -20,9 +20,9 @@ jobs:
       - store_artifacts:
           path: cypress/screenshots
       - store_artifacts:
-          path: mochawesome-report
+          path: cypress/mochawesome-report
       - persist_to_workspace:
-          root: mochawesome-report
+          root: cypress/mochawesome-report
           paths:
             - test4.json
             - test4.html
