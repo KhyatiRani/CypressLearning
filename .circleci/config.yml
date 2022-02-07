@@ -1,27 +1,73 @@
 version: 2.1
 orbs:
   node: circleci/node@4.3.0
+  win: circleci/windows@2.2.0 
   browser-tools: circleci/browser-tools@1.1.3
-
 jobs:
-  chrome:
-    
+  build:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
       - checkout
+      - node/install-packages
+
+  combine_reports:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - attach_workspace:
+          at: cypress/reports
+      - run: ls /mochawesome-report
+  chrome:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - node/install-packages
       - browser-tools/install-chrome
       - node/install-packages
-      - run: 
-          name: Running cypress tests to generate reports
-          command: npm run finaltest 
+      - run:
+          name: Run tests on headless chrome
+          command: npm run testcase1
       - store_artifacts:
           path: mochawesome-report
-     
-
-
+      - persist_to_workspace:
+          root: mochawesome-report
+          paths:
+            - test1.json
+            - test1.html
+  firefox:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - node/install-packages
+      - browser-tools/install-firefox
+      - node/install-packages
+      - run:
+          name: Run tests on headless firefox
+          command: npm run finaltest
+      - store_artifacts:
+          path: cypress/reports
+      - persist_to_workspace:
+          root: cypress/reports
+          paths:
+            - test2.json
+            - test2.html
+  
 workflows:
-  end-to-end-tests:
+  version: 2
+  build_and_test:
     jobs:
-      - chrome
-    
+      - build
+      - chrome:
+          requires:
+            - build
+      - firefox:
+          requires:
+            - build
+  
+      - combine_reports:
+          requires:
+            - chrome
+            - firefox
+                    
+            
