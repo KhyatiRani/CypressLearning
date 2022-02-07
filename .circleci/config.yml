@@ -24,7 +24,7 @@ jobs:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
-      - checkout
+      
       - browser-tools/install-chrome
       - run:
           name: Run tests on headless Chrome
@@ -41,7 +41,6 @@ jobs:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
-      - checkout
       - run:
           name: Set up Microsoft Edge
           command: |
@@ -64,7 +63,6 @@ jobs:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
-      - checkout
       - browser-tools/install-firefox
       - run:
           name: Run TestCafe tests on headless Firefox
