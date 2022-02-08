@@ -13,7 +13,7 @@ jobs:
           keys:
             - 'v3-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
 
-      - browser-tools/install-chrome
+      - node/install-packages
       - save_cache:
           key: 'v3-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
           paths:
@@ -30,6 +30,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+      - browser-tools/install-chrome
       - run:
           name: Running cypress tests on browser chrome
           command: npm run testcase1
@@ -41,6 +42,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+      - browser-tools/install-firefox
       - run:
           name: Running cypress tests on browser firefox
           command: npm run testcase2
