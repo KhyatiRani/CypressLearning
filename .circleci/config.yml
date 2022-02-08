@@ -20,9 +20,7 @@ jobs:
             - ~/.cache
       - persist_to_workspace:
           root: ~/
-          paths:
-            - .cache
-            - circleci
+         
    
   chrome:
     working_directory: ~/circleci 
