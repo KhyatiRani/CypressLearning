@@ -2,61 +2,59 @@ version: 2.1
 orbs:
   node: circleci/node@4.3.0
   browser-tools: circleci/browser-tools@1.1.3
+
 jobs:
-  build:
-    working_directory: ~/circleci
+  chrome:
     docker:
       - image: cimg/node:12.22-browsers
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - 'v3-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
-
-      - node/install-packages
-      - save_cache:
-          key: 'v3-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
-          paths:
-            - ~/.cache
-      - persist_to_workspace:
-          root: ~/
-         
-   
-  chrome:
-    working_directory: ~/circleci 
-    docker:
-      - image: cimg/node:12.22-browsers
-    steps:
-      - attach_workspace:
-          at: ~/
       - browser-tools/install-chrome
+      - node/install-packages
       - run:
-          name: Running cypress tests on browser chrome
-          command: npm run testcase1
-    
+          name: Run TestCafe tests on headless Chrome
+          command: npm run testcase2 --browser chrome
+
   firefox:
-    working_directory: ~/circleci
     docker:
       - image: cimg/node:12.22-browsers
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
       - browser-tools/install-firefox
+      - node/install-packages
       - run:
-          name: Running cypress tests on browser firefox
-          command: npm run testcase2
-      
+          name: Run tests on headless Firefox
+          command: npm run testcase1 
+
+  edge:
+    docker:
+      - image: cimg/node:12.22-browsers
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Set up Microsoft Edge
+          command: |
+              curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+              sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+              sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+              sudo apt update
+              sudo apt install microsoft-edge-beta
+      - run:
+          name: Run TestCafe tests on Microsoft Edge
+          command: npm run testcase2 --browser edge
+
 workflows:
-  version: 2
-  build_and_test:
+  end-to-end-tests:
     jobs:
-      - build
-      - chrome:
+      - chrome
+      - firefox 
+      - hold:
+          type: approval
           requires:
-            - build
-      - firefox:
-          requires:
-            - build
-    
-    
-           
+            - firefox
+      - edge:
+         requires:
+            - firefox
+
+         
