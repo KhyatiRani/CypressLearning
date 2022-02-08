@@ -24,7 +24,8 @@ jobs:
             - .cache
             - circleci
    
-  chrome: 
+  chrome:
+    working_directory: ~/circleci 
     docker:
       - image: cimg/node:12.22-browsers
     steps:
