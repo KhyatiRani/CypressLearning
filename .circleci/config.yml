@@ -1,16 +1,19 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@4.3.0
+  browser-tools: circleci/browser-tools@1.1.3
 jobs:
   build:
     working_directory: ~/tmp
     docker:
-      - image: 'cypress/base:10'
+      - image: cimg/node:12.22-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
             - 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
 
-      - run: npm ci
+      - browser-tools/install-chrome
       - save_cache:
           key: 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
           paths:
@@ -21,40 +24,36 @@ jobs:
             - .cache
             - tmp
    
-  test1:
-   
+  chrome: 
     docker:
-      - image: 'cypress/base:10'
-
+      - image: cimg/node:12.22-browsers
     steps:
       - attach_workspace:
           at: ~/
       - run:
-          name: Running cypress tests 1
+          name: Running cypress tests on browser chrome
           command: npm run testcase1
     
-  test2:
+  firefox:
     working_directory: ~/tmp
     docker:
-      - image: 'cypress/base:10'
+      - image: cimg/node:12.22-browsers
     steps:
       - attach_workspace:
           at: ~/
       - run:
-          name: Running cypress tests 2
+          name: Running cypress tests on browser firefox
           command: npm run testcase2
-     
-  
-     
+      
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - test1:
+      - chrome:
           requires:
             - build
-      - test2:
+      - firefox:
           requires:
             - build
     
