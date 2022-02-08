@@ -4,7 +4,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.1.3
 jobs:
   build:
-    working_directory: ~/tmp
+    working_directory: ~/circleci
     docker:
       - image: cimg/node:12.22-browsers
     steps:
@@ -22,7 +22,7 @@ jobs:
           root: ~/
           paths:
             - .cache1
-            - tmp
+            - circleci
    
   chrome: 
     docker:
@@ -35,7 +35,7 @@ jobs:
           command: npm run testcase1
     
   firefox:
-    working_directory: ~/tmp
+    working_directory: ~/circleci
     docker:
       - image: cimg/node:12.22-browsers
     steps:
