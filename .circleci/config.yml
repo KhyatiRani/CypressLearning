@@ -26,6 +26,11 @@ jobs:
           name: Run tests on headless Firefox
           command: npm run testcase1 
       - run:
+          name: Run commands
+          command: |
+              echo "I will exit success status"
+              exit 0
+      - run:
           name: Run on fail status
           command: |
               echo "I am result of above failed job"
