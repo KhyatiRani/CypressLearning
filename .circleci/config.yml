@@ -1,15 +1,63 @@
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
+version: 2
+jobs:
+  build:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+
+      - run: npm ci
+      - save_cache:
+          key: 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - .cache
+            - tmp
+   
+  test1:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Running cypress tests 1
+          command: npm run testcase1
+    
+  test2:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Running cypress tests 2
+          command: npm run testcase2
+     
+  
+     
 workflows:
-  nightly:
-    triggers:
-      - schedule:
-          cron: '0 * * * *'
-          filters:
-            branches:
-              only:
-                - main
+  version: 2
+  build_and_test:
     jobs:
-      - cypress/run:
-          name: Nightly Cypress E2E tests
+      - build
+      - test1:
+          requires:
+            - build
+      - test2:
+          requires:
+            - build
+    
+    
+           
