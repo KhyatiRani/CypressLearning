@@ -11,11 +11,11 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+            - 'v3-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
 
       - browser-tools/install-chrome
       - save_cache:
-          key: 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+          key: 'v3-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
           paths:
             - ~/.cache
       - persist_to_workspace:
