@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/tmpi
+    working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
     steps:
@@ -22,7 +22,7 @@ jobs:
             - tmp
    
   test1:
-    working_directory: ~/tmp
+   
     docker:
       - image: 'cypress/base:10'
 
