@@ -24,7 +24,7 @@ jobs:
       - node/install-packages
       - run:
           name: Run tests on headless Firefox
-          command: npm run testcase1 
+          command: npm run testcase1 || true
       - run:
           name: Run commnads
           command: |
