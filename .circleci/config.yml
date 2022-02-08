@@ -26,9 +26,9 @@ jobs:
           name: Run tests on headless Firefox
           command: npm run testcase1 
       - run:
-      name: Upload Failed Tests
-      command: curl --data fail_tests.log http://example.com/error_logs
-      when: on_fail
+          name: Upload Failed Tests
+          command: curl --data fail_tests.log http://example.com/error_logs
+          when: on_fail
 
   edge:
     docker:
