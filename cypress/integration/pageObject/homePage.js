@@ -4,7 +4,7 @@
    class homePage{
 
    visit(){
-      cy.visit('https://demoblaze.com/')
+      cy.visit('/')
    }
    home(){
       //https://www.cypress.io/blog/2018/01/16/end-to-end-snapshot-testing/

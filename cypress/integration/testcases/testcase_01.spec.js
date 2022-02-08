@@ -35,7 +35,7 @@ describe('Check the Page Navigation', () => {
     })
   })
   it('Verify Page title', () => {
-    hp.getPageTitle().should('contains', 'STORE')
+    hp.getPageTitle().should('contains', 'QA')
   })
 
 
