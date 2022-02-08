@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/tmp
+    working_directory: ~/tmpi
     docker:
       - image: 'cypress/base:10'
     steps:
@@ -19,7 +19,7 @@ jobs:
           root: ~/
           paths:
             - .cache
-            
+            - tmp
    
   test1:
     working_directory: ~/tmp
