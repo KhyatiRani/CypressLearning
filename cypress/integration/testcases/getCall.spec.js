@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+/* /// <reference types="cypress" />
 describe('Verify get Request', function () {
     Cypress.config('baseUrl', 'https://nightly.futurefuel.io')
 
@@ -167,3 +167,4 @@ describe('Verify get Request', function () {
 })
 
 
+ */

@@ -1,55 +1,15 @@
-version: 2
-jobs:
-  build:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - checkout
-      - run: npm ci
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - tmp
-  test1:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Running cypress tests 1
-          command: npm run testcase1
-     
-  test2:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Running cypress tests 2
-          command: npm run testcase2
-  
-     
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
 workflows:
-  version: 2
-  build_and_test:
+  nightly:
+    triggers:
+      - schedule:
+          cron: '*/2 * * * *'
+          filters:
+            branches:
+              only:
+                - main
     jobs:
-      - build
-      - test1:
-          requires:
-            - build
-      - test2:
-          requires:
-            - build
-    
-           
+      - cypress/run:
+          name: Nightly Cypress E2E tests

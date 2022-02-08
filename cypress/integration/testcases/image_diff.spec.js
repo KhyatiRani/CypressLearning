@@ -1,4 +1,4 @@
-describe('Visuals', () => {
+//describe('Visuals', () => {
    /*  beforeEach(() => {
       cy.viewport(1280, 720)
     })
@@ -8,7 +8,7 @@ describe('Visuals', () => {
       cy.get('[alt="QA InfoTech Logo"]').compareSnapshot()
       //cy.compareSnapshot('wholePage')
     }) */
-    it('verify UI across the pages', () =>{
+   /*  it('verify UI across the pages', () =>{
      
         cy.visit('/')
         cy.compareSnapshot('Home Page', {
@@ -21,3 +21,4 @@ describe('Visuals', () => {
 })
 
   
+ */

@@ -14,8 +14,7 @@ describe('Check the Page Navigation', () => {
   })
 
 
-
-  it.only('POST-create', async () => {
+  it.skip('POST-create', async () => {
 
     //"@bahmutov/cy-api": "^1.6.2"
     const login = await promisify(cy.api({
@@ -68,7 +67,7 @@ describe('Check the Page Navigation', () => {
     })
 
 
-    it('should run tests with async/await', async () => {
+    it.skip('should run tests with async/await', async () => {
       //const body = await promisify(cy.get('body'))
       //expect(body).to.be.visible
 
@@ -80,7 +79,7 @@ describe('Check the Page Navigation', () => {
       })
     })
 
-    it('assert - given value is an object', () => {
+    it.skip('assert - given value is an object', () => {
       const employee = {
         name: 'abc',
         age: 1,
