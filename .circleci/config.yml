@@ -24,12 +24,9 @@ jobs:
       - node/install-packages
       - run:
           name: Run tests on headless Firefox
+          #https://support.circleci.com/hc/en-us/articles/360057590591-Ignoring-A-Failure-In-A-Step
           command: npm run testcase1 || true
-      - run:
-          name: Run commnads
-          command: |
-              echo "I will exit success status"
-              exit 0
+      
       - run:
           name: Run on fail status
           command: |
