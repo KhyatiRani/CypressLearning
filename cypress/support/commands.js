@@ -7,6 +7,14 @@
 require('@cypress/snapshot').register()
 
 
+//Downloadfile
+//https://www.npmjs.com/package/cypress-downloadfile
+require('cypress-downloadfile/lib/downloadFileCommand')
+//verify downloadfile
+//https://elaichenkov.medium.com/cypress-how-to-verify-that-file-is-downloaded-with-cy-verify-downloads-c520b7760a69#:~:text=To%20verify%20that%20the%20file,that%20the%20file%20is%20downloaded.
+require('cy-verify-downloads').addCustomCommand();
+
+
 
 // ***********************************************
 // This example commands.js shows you how to

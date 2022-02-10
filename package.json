@@ -28,6 +28,7 @@
   "license": "ISC",
   "dependencies": {
     "common-tags": "^1.8.2",
+    "cypress-downloadfile": "^1.2.1",
     "cypress-promise": "^1.1.0",
     "cypress-visual-regression": "^1.6.3",
     "debug": "^4.3.3",
@@ -47,6 +48,7 @@
     "@cypress/webpack-preprocessor": "^5.11.0",
     "allure-commandline": "^2.13.8",
     "babel-loader": "^8.2.3",
+    "cy-verify-downloads": "^0.0.6",
     "cypress": "^9.3.1",
     "cypress-circleci-reporter": "^0.2.0",
     "cypress-grep": "^2.13.1",

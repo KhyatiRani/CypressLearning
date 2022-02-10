@@ -1,18 +1,24 @@
-/* /// <reference types="cypress" />
+/// <reference types="cypress" />
+/// <reference types="cypress-downloadfile"/>
 describe('Verify get Request', function () {
     Cypress.config('baseUrl', 'https://nightly.futurefuel.io')
 
 
-    const add = (a, b) => a + b
-    it.only('adds numbers', () => {
+ /*    const add = (a, b) => a + b
+    it('adds numbers', () => {
       cy.wrap(add(2, 3)).snapshot()
 
       cy.wrap(add(1, 19)).snapshot()
 
+    }) */
+
+/* 
+    it('File download',() =>{
+        cy.downloadFile('https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg','cypress/downloads','demoFile.jpg')
+        cy.verifyDownload('demoFile.jpg')
+
+
     })
-
-
-
 
 
     it('Validate get request', () => {
@@ -136,26 +142,35 @@ describe('Verify get Request', function () {
                     expect(interception.response.statusCode).to.eq(200)
                 })
 
-            })
+           }) */
 
             it('Validate get request for Roll Up module', () => {
-                cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/loan-portfolios/1ec7d8ea-e93c-67c4-b81b-0a64d1216297/loan-accounts'
-  ,).as('rollup')
+                cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/logi'
+  ,).as('login')
 
 
                 cy.visit('/')
-                cy.get('[name="email"]').clear().type('abc@gmail.com')
-                cy.get('[name="password"]').clear().type('FuelF@rFuture123')
-                cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
+                //cy.get('[name="email"]').clear().type('abc@gmail.com')
+                //cy.get('[name="password"]').clear().type('FuelF@rFuture123')
+                //cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
 
                 //cy.wait('@login')
-                cy.wait('@login').then((interception) => {
-                    cy.log(interception.id)
+                cy.wait('@login').then((xhr) => {
+                  /*   cy.log(interception.id)
                     cy.log(interception.state)
                     cy.log('status code is: ' + interception.response.statusCode)
                     cy.log('response body is: ' + interception.response.body)
 
-                    expect(interception.response.statusCode).to.eq(200)
+                    expect(interception.response.statusCode).to.eq(200) */
+                    if(xhr.status === 200) {
+                        // Code to test when status is 200
+                    } else if(xhr.status === 400) {
+                        // Code to test when status is 400
+                    } else {
+                        // Code to test when status is none of the above.
+                    }
+
+
                 })
 
             })
@@ -163,8 +178,7 @@ describe('Verify get Request', function () {
 
         })
 
-    })
-})
+  //  })
+//})
 
 
- */

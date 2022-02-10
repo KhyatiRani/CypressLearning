@@ -37,12 +37,12 @@ jobs:
               echo "I am result of above failed job"
           when: on_fail
       - run:
-          name: Run on fail status
+          name: always Run
           command: |
               echo "I am result of above success/failed job"
           when: always
       - run:
-          name: Run on fail status
+          name: Run on success status
           command: |
               echo "I am result of above success job"
           when: on_success

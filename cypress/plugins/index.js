@@ -36,7 +36,13 @@ function getConfigurationByFile(file) {
  
 //module.exports = (on, config)=> {
  // getCompareSnapshotsPlugin(on, config);
-//};  
+//}; 
+
+
+
+
+
+
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
@@ -63,6 +69,20 @@ module.exports = (on, config) => {
 
   
 }
+
+
+
+
+
+const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
+const { isFileExist } = require('cy-verify-downloads')
+module.exports = (on, config) => {
+  on('task', {downloadFile})
+  on('task', { isFileExist })
+}
+
+
+
 
 
 
