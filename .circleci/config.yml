@@ -8,6 +8,9 @@ jobs:
   chrome:
     docker:
       - image: cimg/node:12.22-browsers
+    
+
+
     steps:
       - checkout
       - browser-tools/install-chrome
@@ -46,9 +49,11 @@ jobs:
           name: Run on success status
           command: |
               echo "I am result of above success job"
-          when: on_success
-      - restore_cache:
-          key: build-status-v1-{{ .Branch }}-{{ checksum "/tmp/.ci_job_name" }}-
+      - run: |
+          if [ "$CIRCLE_BRANCH" = "develop" ]; then
+             circleci-agent step halt
+          fi
+
 
     status:
     description: |
