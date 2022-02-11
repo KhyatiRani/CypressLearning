@@ -27,20 +27,22 @@ jobs:
       - checkout
       - browser-tools/install-firefox
       - node/install-packages
-      - run:
-          name: Run tests on headless Firefox
-          #https://support.circleci.com/hc/en-us/articles/360057590591-Ignoring-A-Failure-In-A-Step
-          command: npm run testcase1
-      - run:
-          name: Run commnads
-          command: |
-              echo "I will exit success status"
-              exit 0
+      
+     
       - when:
           condition: false
           steps:
            - run:
                command: circleci-agent step halt
+           - run:
+          name: Run tests on headless Firefox
+          #https://support.circleci.com/hc/en-us/articles/360057590591-Ignoring-A-Failure-In-A-Step
+          command: npm run testcase1
+        - run:
+          name: Run commnads
+          command: |
+              echo "I will exit success status"
+              exit 0
 
 
  
