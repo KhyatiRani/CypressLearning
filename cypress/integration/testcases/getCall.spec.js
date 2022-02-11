@@ -4,16 +4,16 @@ describe('Verify get Request', function () {
     Cypress.config('baseUrl', 'https://nightly.futurefuel.io')
 
 
- /*    const add = (a, b) => a + b
-    it('adds numbers', () => {
+    const add = (a, b) => a + b
+    it.skip('adds numbers', () => {
       cy.wrap(add(2, 3)).snapshot()
 
       cy.wrap(add(1, 19)).snapshot()
 
-    }) */
+    }) 
 
-/* 
-    it('File download',() =>{
+
+    it.skip('File download',() =>{
         cy.downloadFile('https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg','cypress/downloads','demoFile.jpg')
         cy.verifyDownload('demoFile.jpg')
 
@@ -142,7 +142,7 @@ describe('Verify get Request', function () {
                     expect(interception.response.statusCode).to.eq(200)
                 })
 
-           }) */
+           })
 
             it('Validate get request for Roll Up module', () => {
                 cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/logi'
@@ -178,7 +178,7 @@ describe('Verify get Request', function () {
 
         })
 
-  //  })
-//})
+    })
+})
 
 

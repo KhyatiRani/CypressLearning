@@ -16,6 +16,11 @@ require('cy-verify-downloads').addCustomCommand();
 
 
 
+  Cypress.Commands.add("parseXlsx", (inputFile) => {
+    return cy.task('parseXlsx', { filePath: inputFile })
+    });
+
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

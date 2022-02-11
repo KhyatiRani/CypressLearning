@@ -1,9 +1,11 @@
 //Open Cypress Test Runner dashboard:npm run test
 /// <reference types="cypress" />
 import homePage from '../pageObject/homePage'
+import getCallApi from '../pageObject/getCallApi'
 const or = require("../../locators.json")
 import promisify from 'cypress-promise'
 const hp = new homePage()
+const callApi= new getCallApi()
 describe('Check the Page Navigation', () => {
 
 
@@ -13,9 +15,7 @@ describe('Check the Page Navigation', () => {
     })
   })
 
-
   it.skip('POST-create', async () => {
-
     //"@bahmutov/cy-api": "^1.6.2"
     const login = await promisify(cy.api({
       method: 'POST',
@@ -53,26 +53,7 @@ describe('Check the Page Navigation', () => {
     })
 
 
-
-
-
-
     it.skip('should run tests with async/await', async () => {
-
-      /* const Log = await promisify(cy.get('[data-testid="next-btn-login"] > .MuiButton-label'))
-  
-      expect(body).to.equal('body')*/
-
-
-    })
-
-
-    it.skip('should run tests with async/await', async () => {
-      //const body = await promisify(cy.get('body'))
-      //expect(body).to.be.visible
-
-
-
       await promisify(cy.get('notfound', { timeout: 1000 })).catch(err => {
         expect(err.message).to.contain('Timed out retrying after 1000ms: Expected to find element:')
         return true
@@ -90,6 +71,12 @@ describe('Check the Page Navigation', () => {
 
   })
 
+
+
+
+  it.only('getting plaid information', async () => {
+    callApi.getPlaidInfo()
+  })
 })
 
 
