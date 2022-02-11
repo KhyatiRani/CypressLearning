@@ -36,10 +36,11 @@ jobs:
           command: |
               echo "I will exit success status"
               exit 0
-   
-      - slack/notify:
-          event: always
-          template: basic pass/fail
+      - when:
+          condition: false
+          steps:
+           - run:
+               command: circleci-agent step halt
 
 
  
