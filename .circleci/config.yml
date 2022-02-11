@@ -36,24 +36,13 @@ jobs:
           command: |
               echo "I will exit success status"
               exit 0
-      - run:
-          name: Run on fail status
-          command: |
-              echo "I am result of above failed job"
-          when: on_fail
-      - run:
-          name: always Run
-          command: |
-              echo "I am result of above success/failed job"
-          when: always
-      - run:
-          name: Run on success status
-          command: |
-              echo "I am result of above success job"
-      - slack/on-hold:
-          context: slack-secrets:
+   
+      - slack/notify:
           event: always
           template: basic pass/fail
+
+
+ 
 
   edge:
     docker:
