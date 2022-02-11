@@ -52,7 +52,7 @@ jobs:
               echo "I am result of above success job"
       - slack/notify:
           event: always
-          "text": "*basic pass/fail*"
+          template: basic pass/fail
 
 
     status:
