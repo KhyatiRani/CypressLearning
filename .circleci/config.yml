@@ -50,19 +50,10 @@ jobs:
           name: Run on success status
           command: |
               echo "I am result of above success job"
-      - slack/notify:
+      - slack/on-hold:
+          context: slack-secrets:
           event: always
           template: basic pass/fail
-
-
-    status:
-    description: |
-      Tracks changes between the current and previous runs of the current job and writes the status change to an environment variable named CIRCLE_JOB_STATUS_CHANGE, with one of four values:
-
-        success: the job was previously successful and is still successful
-        failed:  the job previously failed and is still failing
-        fixed:   the job previously failed but is now successful
-        broke:   the job was previously successful but is now failing
 
   edge:
     docker:
