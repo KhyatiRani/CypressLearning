@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Run tests on headless Firefox
           #https://support.circleci.com/hc/en-us/articles/360057590591-Ignoring-A-Failure-In-A-Step
-          command: npm run testcase1 || true
+          command: npm run testcase1
       - run:
           name: Run commnads
           command: |
