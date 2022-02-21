@@ -54,10 +54,10 @@
    getPageTitle(){
       return cy.title()
    }
-   navigateToAboutPage(){
+   navigateToSolutionsPage(){
       cy.get(or.homePage.toggleIconOpen).click()
-      cy.get(or.homePage.aboutLink).click()
-      cy.get(or.homePage.teamLink).click()
+      cy.get('#menu-item-17007 > [href="https://qualitestgroup.com/our-solutions/"]').click()
+      cy.get('#menu-item-673 > [href="#"]').click()
       .then(() => {
          console.log("This is to check the log")  // Log to check the async behaviour
      });
@@ -67,29 +67,20 @@
      
    }
    checkContent(){
-     return  cy.get(or.homePage.teamsPage)
+     return  cy.get('body')
    }
-   navigatetoServicesPage(){
+   navigatetoIndustriesPage(){
       cy.get(or.homePage.toggleIconOpen).click()
-      cy.get(or.homePage.servicesLink).click()
-      cy.get(or.homePage.functionalTestingLink).click()
+      cy.get('#menu-item-1369 > [href="#"]').click()
+      cy.get('#menu-item-6118 > a').click()
    }
    verifyTheContent(){
-      return cy.get(or.homePage.functionalPage)
+      return cy.get('body')
    }
    navigateToQuotePage(){
       cy.get(or.homePage.toggleIconOpen).click()
-      cy.get(or.homePage.quoteLink).click()
+      cy.get('#menu-item-6702 > [href="#"]').click()
    }
-   entersTheName(firstName,lastName){
-      cy.get(or.homePage.firstNameField).type(firstName); 
-      cy.get(or.homePage.lastNameField).type(lastName)
-   }
-   selectFromDropDownList(location){
-      cy.get(or.homePage.locationDropDown).select(location) 
-   }
-   checkThecontent(){
-      return cy.get(or.homePage.quotePage)
-   }
+
 }
    export default homePage

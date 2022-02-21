@@ -1,6 +1,6 @@
 {
     "homePage":{
-    "toggleIconOpen":".toggle-icon-open",
+    "toggleIconOpen":"#nav-icon1",
     "aboutLink":"#cmm4e-menu-item-2123 > [href=\"#\"]",
     "teamLink":"#cmm4e-menu-item-13637 > .cmm4e-nav-link> .cmm4e-item-label",
     "teamsPage":".elementor-element-c23669e",

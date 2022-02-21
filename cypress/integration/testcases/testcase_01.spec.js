@@ -35,16 +35,16 @@ describe('Check the Page Navigation', () => {
     })
   })
   it('Verify Page title', () => {
-    hp.getPageTitle().should('contains', 'abc')
+    hp.getPageTitle().should('contains', 'Qualitest')
   })
 
 
-  it('visits to  the "ABOUT" page', () => {
-    hp.navigateToAboutPage()
+  it('visits to  the "Solution" page', () => {
+    hp.navigateToSolutionsPage()
   })
 
   it('checks if "About QA InfoTech" is present on that page', () => {
-    hp.checkContent().contains('About QA InfoTech')
+    hp.checkContent().contains('Our Solutions')
   })
 
 

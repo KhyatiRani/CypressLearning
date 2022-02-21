@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://qainfotech.com/",
+  "baseUrl": "https://qualitestgroup.com/",
   "ignoreTestFiles": "**/pageObject/*.js",
 
   "defaultCommandTimeout": 200000,

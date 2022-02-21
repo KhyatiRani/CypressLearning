@@ -1,57 +1,41 @@
 //Open Cypress Test Runner dashboard:npm run test
 /// <reference types="cypress" />
 import getCallApi from '../pageObject/getCallApi'
+//import user from '../fixtures/loginData2.json'
 const or = require("../../locators.json")
 import promisify from 'cypress-promise'
-const callApi= new getCallApi()
+import { data } from 'cypress/types/jquery'
+const callApi = new getCallApi()
 describe('Cypress API services', () => {
 
-  it.only('getting plaid information', async () => {
+  before(() => {
+    cy.fixture('loginData2').then((data) => {
+      globalThis.data = data
+    })
+  })
+
+  it.only('getting plaid information',async() => {
 
     const login = await promisify(cy.api({
-        method: 'POST',
-        url: 'https://api.nightly.futurefuel.io/api/1/auth/login',
-        body: {
-          email: 'abc@gmail.com',
-          password: 'FuelF@rFuture123',
-        },
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      }).then(response => response.login)
-      )
-  
-      console.log('login response', login)
+      method: 'POST',
+      url: 'https://api.nightly.futurefuel.io/api/1/auth/login',
+      //body: data,
+      body: {
+        email: data.email,
+        password: data.password,
+    },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => response.login)
+    )
       expect(login).to.have.property('status', 200)
       expect(login.body).to.not.be.null
-  
-      const cookies = login.headers['set-cookie'];
-    const plaidinfo = await promisify(cy.api({
-        method: 'POST',
-        url: 'https://api.nightly.futurefuel.io/api/1/bank-portfolios',
-        headers: {
-            'cookie': cookies
-        },
-        body: {
-          plaid_institution_id: 'ins_5'
-        },
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      }).then(res => res.plaidinfo)
-      //expect(users).to.be.visible
-    )
 
-    cy.writeFile('cypress/fixtures/userDetails.json', {
-      "response": plaidinfo.body
+      //Write Unique ID to a fixture file
+      cy.writeFile('cypress/fixtures/resData.json', {
+          "response": login.body
+      })
     })
-      
   })
-})
-
-
-
-
-
-
 

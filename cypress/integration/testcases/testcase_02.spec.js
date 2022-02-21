@@ -14,16 +14,16 @@ const hp=new homePage()
       
       })
       it('Verify Page title',{ tags: '@smoke' },()=>{
-        hp.getPageTitle().should('contains','QA')
+        hp.getPageTitle().should('contains','Qualitest')
       })
     
-      it('visits to "SERVICES" page',()=>{
-        hp.navigatetoServicesPage()
+      it('visits to "Industries" page',()=>{
+        hp.navigatetoIndustriesPage()
       })
       it('checks if "Functional Testing Services Overview" is present on that page',()=>{
-        hp.verifyTheContent().contains('Functional Testing Services Overview')
+        hp.verifyTheContent().contains('Industries')
       })
-      it('visits to "SERVICES" page',()=>{
+    /*   it('visits to "SERVICES" page',()=>{
         hp.navigateToQuotePage()
       })
       it.skip('Gets the input field and inputs text', () => {
@@ -34,7 +34,7 @@ const hp=new homePage()
       })
       it.skip('checks if "Request For Quote" is present on that page',()=>{
         hp.checkThecontent().contains('Request For Quote')
-      })  
+      })  */ 
 
   
   

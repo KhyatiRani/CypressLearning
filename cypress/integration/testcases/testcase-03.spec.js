@@ -9,12 +9,6 @@ const callApi= new getCallApi()
 describe('Check the Page Navigation', () => {
 
 
-  before(() => {
-    cy.fixture('testData').then((data) => {
-      globalThis.data = data
-    })
-  })
-
   it.skip('POST-create', async () => {
     //"@bahmutov/cy-api": "^1.6.2"
     const login = await promisify(cy.api({
@@ -74,7 +68,7 @@ describe('Check the Page Navigation', () => {
 
 
 
-  it.only('getting plaid information', async () => {
+  it.only('POST-create', async () => {
     callApi.getPlaidInfo()
   })
 })

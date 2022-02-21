@@ -76,7 +76,6 @@ describe('Verify get Request', function () {
                 },
                 headers: {
                     'Content-Type': 'application/json',
-
                     'cookie': cookies
                 },
 

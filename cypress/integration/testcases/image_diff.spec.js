@@ -1,5 +1,29 @@
+describe('my tests', () => {
+  it('works', () => {
+    cy.log('first snapshot')
+    cy.wrap({ foo: 42 }).snapshot()
+    cy.log('second snapshot')
+    cy.wrap({ bar: 101 }).snapshot()
+  })
+})
 
-describe('Visuals', () => {
+describe('focused input field', () => {
+  it('is empty and then typed into', () => {
+    cy.visit('https://qualitestgroup.com/')
+      cy.get('#qualitest_logo').snapshot({
+        name: 'human snapshot name' // to use in the snapshot file
+        //json: false                  // convert DOM elements into JSON
+                                     // when storing in the snapshot file
+      })
+  })
+})
+
+
+
+
+
+
+//describe('Visuals', () => {
   /* beforeEach(() => {
     cy.viewport(1280, 720)
   }) */
@@ -26,7 +50,7 @@ it('verify UI across the pages', () =>{
 })*/
 
 
-})
+//})
 
 
 
@@ -34,7 +58,7 @@ it('verify UI across the pages', () =>{
 // type definitions for Cypress object "cy"
 // <reference types="cypress" />
 
-const availablefixtures = [
+/* const availablefixtures = [
   {
       "name": "loginData",
       "context": "1"
@@ -70,3 +94,4 @@ describe('Automation Test Suite - Fixtures', () => {
 })
 })
 
+ */

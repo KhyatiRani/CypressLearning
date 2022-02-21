@@ -2,16 +2,11 @@ version: 2.1
 orbs:
   node: circleci/node@4.3.0
   browser-tools: circleci/browser-tools@1.1.3
-  job-status-change: expo/job-status-change@1.0.11
-  slack: circleci/slack@4.1
 
 jobs:
   chrome:
     docker:
       - image: cimg/node:12.22-browsers
-    
-
-
     steps:
       - checkout
       - browser-tools/install-chrome
@@ -27,25 +22,9 @@ jobs:
       - checkout
       - browser-tools/install-firefox
       - node/install-packages
-      
-     
-      - when:
-          condition: false
-          steps:
-           - run:
-               command: circleci-agent step halt
-           - run:
-          name: Run tests on headless Firefox
-          #https://support.circleci.com/hc/en-us/articles/360057590591-Ignoring-A-Failure-In-A-Step
-          command: npm run testcase1
-        - run:
-          name: Run commnads
-          command: |
-              echo "I will exit success status"
-              exit 0
-
-
- 
+      - run:
+          name: Run TestCafe tests on headless Firefox
+          command: npm run testcase1 --browser firefox
 
   edge:
     docker:
@@ -70,12 +49,8 @@ workflows:
     jobs:
       - chrome
       - firefox 
-      - hold:
-          type: approval
-          requires:
-            - firefox
       - edge:
          requires:
-            - hold
+            - firefox
 
          
