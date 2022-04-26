@@ -9,7 +9,7 @@ const callApi= new getCallApi()
 describe('Check the Page Navigation', () => {
 
 
-  it.skip('POST-create', async () => {
+  it('POST-create', async () => {
     //"@bahmutov/cy-api": "^1.6.2"
     const login = await promisify(cy.api({
       method: 'POST',
@@ -23,7 +23,7 @@ describe('Check the Page Navigation', () => {
       },
     }).then(response => response.login)
     )
-
+  
     console.log('login response', login)
     expect(login).to.have.property('status', 200)
     expect(login.body).to.not.be.null

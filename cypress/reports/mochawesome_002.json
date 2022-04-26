@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 2,
+    "failures": -2,
+    "start": "2022-02-23T13:21:30.411Z",
+    "end": "2022-02-23T13:21:42.543Z",
+    "duration": 12132,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 40,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "947d1bb8-5d87-4c6d-b0ca-4662644ac5c8",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a991242a-c20f-42ab-bd51-86ba3333766c",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handling home",
+              "fullTitle": "Check the Page Navigation Handling home",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "6466dd81-3f5a-42d3-a49e-b51c2636f0be",
+              "parentUUID": "a991242a-c20f-42ab-bd51-86ba3333766c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Handling new Browser Window",
+              "fullTitle": "Check the Page Navigation Handling new Browser Window",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d9a9dc52-daf7-4b29-b634-f8db32c90468",
+              "parentUUID": "a991242a-c20f-42ab-bd51-86ba3333766c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 464,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'Qualitest');",
+              "err": {},
+              "uuid": "8415f367-e427-40e5-a602-897237420f2a",
+              "parentUUID": "a991242a-c20f-42ab-bd51-86ba3333766c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to  the \"Solution\" page",
+              "fullTitle": "Check the Page Navigation visits to  the \"Solution\" page",
+              "timedOut": null,
+              "duration": 1188,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigateToSolutionsPage();",
+              "err": {},
+              "uuid": "200cdf06-c16d-411e-b095-188c4d3a64de",
+              "parentUUID": "a991242a-c20f-42ab-bd51-86ba3333766c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"About QA InfoTech\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"About QA InfoTech\" is present on that page",
+              "timedOut": null,
+              "duration": 165,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.checkContent().contains('Our Solutions');",
+              "err": {},
+              "uuid": "88fa1ec6-e67b-42a5-9334-c07120b45bfd",
+              "parentUUID": "a991242a-c20f-42ab-bd51-86ba3333766c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8415f367-e427-40e5-a602-897237420f2a",
+            "200cdf06-c16d-411e-b095-188c4d3a64de",
+            "88fa1ec6-e67b-42a5-9334-c07120b45bfd"
+          ],
+          "failures": [],
+          "pending": [
+            "6466dd81-3f5a-42d3-a49e-b51c2636f0be",
+            "d9a9dc52-daf7-4b29-b634-f8db32c90468"
+          ],
+          "skipped": [],
+          "duration": 1817,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

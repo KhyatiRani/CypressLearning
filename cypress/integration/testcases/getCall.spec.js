@@ -1,27 +1,27 @@
 /// <reference types="cypress" />
 /// <reference types="cypress-downloadfile"/>
-describe('Verify get Request', function () {
+describe('Cypress Api using Then method', function () {
     Cypress.config('baseUrl', 'https://nightly.futurefuel.io')
 
 
     const add = (a, b) => a + b
     it.skip('adds numbers', () => {
-      cy.wrap(add(2, 3)).snapshot()
+        cy.wrap(add(2, 3)).snapshot()
 
-      cy.wrap(add(1, 19)).snapshot()
+        cy.wrap(add(1, 19)).snapshot()
 
-    }) 
+    })
 
 
-    it.skip('File download',() =>{
-        cy.downloadFile('https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg','cypress/downloads','demoFile.jpg')
+    it.skip('File download', () => {
+        cy.downloadFile('https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg', 'cypress/downloads', 'demoFile.jpg')
         cy.verifyDownload('demoFile.jpg')
 
 
     })
 
 
-    it('Validate get request', () => {
+    it.skip('Validate get request', () => {
         //https://github.com/bahmutov/cy-api
         cy.api({
             url: '/login'
@@ -32,7 +32,7 @@ describe('Verify get Request', function () {
         })
 
     })
-    it('POST-create', () => {
+    it.skip('POST-create', () => {
         //const item = { 'email': 'abc@gmail.com', 'password': 'FuelF@rFuture123' }
         cy.api({
             method: 'POST',
@@ -90,94 +90,94 @@ describe('Verify get Request', function () {
             })
 
             //cy.log(JSON.stringify(response.body))
+        })
+    })
 
-
-            it('Validate get request', () => {
-                cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/login'
-                    , (req) => {
-                        req.body = {
-                            email: 'abc@gmail.com',
-                            password: 'FuelF@rFuture123',
-                        }
-                        req.headers['Content-Type'] = 'application/json'
-                    }).as('login')
-
-
-                cy.visit('/')
-                cy.get('[name="email"]').clear().type('abc@gmail.com')
-                cy.get('[name="password"]').clear().type('FuelF@rFuture123')
-                cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
-
-                //cy.wait('@login')
-                cy.wait('@login').then((interception) => {
-                    cy.log(interception.id)
-                    cy.log(interception.state)
-                    cy.log('status code is: ' + interception.response.statusCode)
-                    cy.log('response body is: ' + interception.response.body)
-
-                    expect(interception.response.statusCode).to.eq(200)
-                })
-
-            })
-
-
-            it('Validate get request', () => {
-                cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/login'
-                    , { fixture: 'loginData.json' }).as('login')
-
-
-                cy.visit('/')
-                cy.get('[name="email"]').clear().type('abc@gmail.com')
-                cy.get('[name="password"]').clear().type('FuelF@rFuture123')
-                cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
-
-                //cy.wait('@login')
-                cy.wait('@login').then((interception) => {
-                    cy.log(interception.id)
-                    cy.log(interception.state)
-                    cy.log('status code is: ' + interception.response.statusCode)
-                    cy.log('response body is: ' + interception.response.body)
-
-                    expect(interception.response.statusCode).to.eq(200)
-                })
-
-           })
-
-            it('Validate get request for Roll Up module', () => {
-                cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/logi'
-  ,).as('login')
-
-
-                cy.visit('/')
-                //cy.get('[name="email"]').clear().type('abc@gmail.com')
-                //cy.get('[name="password"]').clear().type('FuelF@rFuture123')
-                //cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
-
-                //cy.wait('@login')
-                cy.wait('@login').then((xhr) => {
-                  /*   cy.log(interception.id)
-                    cy.log(interception.state)
-                    cy.log('status code is: ' + interception.response.statusCode)
-                    cy.log('response body is: ' + interception.response.body)
-
-                    expect(interception.response.statusCode).to.eq(200) */
-                    if(xhr.status === 200) {
-                        // Code to test when status is 200
-                    } else if(xhr.status === 400) {
-                        // Code to test when status is 400
-                    } else {
-                        // Code to test when status is none of the above.
+    describe('Stub the request using Cypress intercept', function () {
+        it.only('Validate get request1', () => {
+            cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/login'
+                , (req) => {
+                    req.body = {
+                        email: 'abc@gmail.com',
+                        password: 'FuelF@rFuture123',
                     }
+                    req.headers['Content-Type'] = 'application/json'
+                }).as('login')
 
 
-                })
+            cy.visit('/')
+            cy.get('[name="email"]').clear().type('abc@gmail.com')
+            cy.get('[name="password"]').clear().type('FuelF@rFuture123')
+            cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
 
+            //cy.wait('@login')
+            cy.wait('@login').then((interception) => {
+                cy.log(interception.id)
+                cy.log(interception.state)
+                cy.log('status code is: ' + interception.response.statusCode)
+                cy.log('response body is: ' + interception.response.body)
+
+                expect(interception.response.statusCode).to.eq(200)
             })
-
 
         })
 
+
+        it.skip('Validate get request', () => {
+            cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/login'
+                , { fixture: 'loginData.json' }).as('login')
+
+
+            cy.visit('/')
+            cy.get('[name="email"]').clear().type('abc@gmail.com')
+            cy.get('[name="password"]').clear().type('FuelF@rFuture123')
+            cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
+
+            //cy.wait('@login')
+            cy.wait('@login').then((interception) => {
+                cy.log(interception.id)
+                cy.log(interception.state)
+                cy.log('status code is: ' + interception.response.statusCode)
+                cy.log('response body is: ' + interception.response.body)
+
+                expect(interception.response.statusCode).to.eq(200)
+            })
+
+        })
+
+        it.skip('Validate get request for Roll Up module', () => {
+            cy.intercept('POST', 'https://api.nightly.futurefuel.io/api/1/auth/logi',).as('login')
+
+
+            cy.visit('/')
+            //cy.get('[name="email"]').clear().type('abc@gmail.com')
+            //cy.get('[name="password"]').clear().type('FuelF@rFuture123')
+            //cy.get('[data-testid="next-btn-login"] > .MuiButton-label').click()
+
+            //cy.wait('@login')
+            cy.wait('@login').then((xhr) => {
+                /*   cy.log(interception.id)
+                  cy.log(interception.state)
+                  cy.log('status code is: ' + interception.response.statusCode)
+                  cy.log('response body is: ' + interception.response.body)
+
+                  expect(interception.response.statusCode).to.eq(200) */
+                if (xhr.status === 200) {
+                    // Code to test when status is 200
+                } else if (xhr.status === 400) {
+                    // Code to test when status is 400
+                } else {
+                    // Code to test when status is none of the above.
+                }
+
+
+            })
+
+        })
+
+
     })
+
 })
 
 

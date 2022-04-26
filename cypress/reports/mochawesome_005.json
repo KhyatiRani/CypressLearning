@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-26T15:02:16.998Z",
+    "end": "2022-04-26T15:02:21.978Z",
+    "duration": 4980,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "112d83c1-3a66-402f-acf1-2799d342f435",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/callApi1.spec.js",
+      "file": "cypress/integration/testcases/callApi1.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d8546841-9222-4f59-8c92-9461995ed1e5",
+          "title": "Cypress API services",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "getting plaid information",
+              "fullTitle": "Cypress API services getting plaid information",
+              "timedOut": null,
+              "duration": 4926,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = await (0, _cypressPromise.default)(cy.api({\n  method: 'POST',\n  url: 'https://api.nightly.futurefuel.io/api/1/auth/login',\n  //body: data,\n  body: {\n    email: data.email,\n    password: data.password\n  },\n  headers: {\n    'Content-Type': 'application/json'\n  }\n}).then(response => response.login));\nexpect(login).to.have.property('status', 200);\nexpect(login.body).to.not.be.null; //Write Unique ID to a fixture file\ncy.writeFile('cypress/fixtures/resData.json', {\n  \"response\": login.body\n});",
+              "err": {},
+              "uuid": "31c5e637-fd73-4073-9bea-c4b9e869a750",
+              "parentUUID": "d8546841-9222-4f59-8c92-9461995ed1e5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "31c5e637-fd73-4073-9bea-c4b9e869a750"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4926,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

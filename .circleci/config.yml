@@ -16,8 +16,6 @@ jobs:
           name: Run TestCafe tests on headless Firefox
           command: npm run testcase1 --browser firefox
 
-
-
 workflows:
   end-to-end-tests:
     jobs:

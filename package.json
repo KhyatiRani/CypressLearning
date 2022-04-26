@@ -10,7 +10,7 @@
     "edge1": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --browser edge",
     "cy:chrome": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/Chrome --browser chrome ",
     "cy:edge": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Mac/edge --browser edge",
-    "runs": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
+    "multiruns": "cypress run --headed --browser chrome && cypress run --headed --browser electron",
     "testcase1": "cypress run  testcases/testcase_01 --spec ./cypress/integration/testcases/testcase_01.spec.js",
     "testcase2": "cypress run testcases/testcase_02 --spec ./cypress/integration/testcases/testcase_02.spec.js",
     "testcases": "npm run testcase1 && npm run testcase2",
@@ -29,9 +29,9 @@
   "dependencies": {
     "cypress-downloadfile": "^1.2.1",
     "cypress-promise": "^1.1.0",
+    "cypress-recurse": "^1.13.1",
     "cypress-visual-regression": "^1.6.3",
     "jsonfile": "^6.1.0",
-
     "npm-run-path": "^4.0.1",
     "url": "^0.11.0"
   },

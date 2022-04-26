@@ -4,7 +4,6 @@ import getCallApi from '../pageObject/getCallApi'
 //import user from '../fixtures/loginData2.json'
 const or = require("../../locators.json")
 import promisify from 'cypress-promise'
-import { data } from 'cypress/types/jquery'
 const callApi = new getCallApi()
 describe('Cypress API services', () => {
 
@@ -20,10 +19,10 @@ describe('Cypress API services', () => {
       method: 'POST',
       url: 'https://api.nightly.futurefuel.io/api/1/auth/login',
       //body: data,
-      body: {
+       body: {
         email: data.email,
         password: data.password,
-    },
+    }, 
       headers: {
         'Content-Type': 'application/json'
       }
