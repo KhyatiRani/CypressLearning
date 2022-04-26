@@ -57,10 +57,10 @@
    navigateToSolutionsPage(){
       cy.get(or.homePage.toggleIconOpen).click()
       cy.get('#menu-item-17007 > [href="https://qualitestgroup.com/our-solutions/"]').click()
-      cy.get('#menu-item-673 > [href="#"]').click()
+     /*  cy.get('#menu-item-673 > [href="#"]').click()
       .then(() => {
          console.log("This is to check the log")  // Log to check the async behaviour
-     });
+     }); */
       console.log('checking the log')
       //cy.contains('Team').click()
       //cy.get('img').should('have.attr', 'class').should('include','custom-logo lazy loaded')

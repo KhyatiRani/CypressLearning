@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-26T15:08:59.648Z",
+    "end": "2022-04-26T15:09:57.129Z",
+    "duration": 57481,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "150d3cb8-67db-4929-86e1-adf81963e3ce",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/jquerycypress.spec.js",
+      "file": "cypress/integration/testcases/jquerycypress.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "211deb3c-7b9d-420d-872e-e6b0465d386e",
+          "title": "JQuery and Cypress Test Case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Pagination using recursion",
+              "fullTitle": "JQuery and Cypress Test Case Pagination using recursion",
+              "timedOut": null,
+              "duration": 51383,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// launch URL\ncy.visit(\"https://www.amazon.in/\");\ncy.wait(3000);\ncy.reload(); // show hidden element with invoke\n//cy.get('#nav-flyout-ya-signin')\n//click hidden element\n//cy.contains('Sign').click();\n/*  recurse(\n   ()=>cy.get('.a-carousel-right > .a-button > .a-button-inner'),\n   ($next) => $next.hasClass('disabled'),\n   {\n     post(){\n       cy.get('.a-carousel-right > .a-button > .a-button-inner').click()\n     }\n   } */",
+              "err": {},
+              "uuid": "8334974d-6573-4700-8b5a-a5b01cad8fa5",
+              "parentUUID": "211deb3c-7b9d-420d-872e-e6b0465d386e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8334974d-6573-4700-8b5a-a5b01cad8fa5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 51383,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -5,7 +5,7 @@
   "scripts": {
     "key": "cypress run --record --key 43946320-8aa1-470b-a125-6649b5b03cd6",
     "open": "cypress open",
-    "cy:firefox1": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --browser firefox",
+    "cy:firefox1": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --browser firefox",
     "chrome1": "cypress run --spec ./cypress/integration/testcases/**/*  --browser chrome ",
     "edge1": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --browser edge",
     "cy:chrome": "cypress run --spec ./cypress/integration/testcases/testcase_01.spec.js --record --key 43946320-8aa1-470b-a125-6649b5b03cd6 --group Windows/Chrome --browser chrome ",

@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-04-26T15:08:32.863Z",
+    "end": "2022-04-26T15:08:51.905Z",
+    "duration": 19042,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a637656d-650d-4759-a4e1-693e0dc9f522",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/image_diff.spec.js",
+      "file": "cypress/integration/testcases/image_diff.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "61992a73-56f1-44bc-a7c7-1b0155025d25",
+          "title": "my tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "works",
+              "fullTitle": "my tests works",
+              "timedOut": null,
+              "duration": 111,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('first snapshot');\ncy.wrap({\n  foo: 42\n}).snapshot();\ncy.log('second snapshot');\ncy.wrap({\n  bar: 101\n}).snapshot();",
+              "err": {},
+              "uuid": "c45fff8e-f502-44f6-8280-c9387b716019",
+              "parentUUID": "61992a73-56f1-44bc-a7c7-1b0155025d25",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c45fff8e-f502-44f6-8280-c9387b716019"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 111,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "da84bcb8-d6a1-475e-90d3-594cf0113173",
+          "title": "focused input field",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "is empty and then typed into",
+              "fullTitle": "focused input field is empty and then typed into",
+              "timedOut": null,
+              "duration": 18738,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://qualitestgroup.com/');\ncy.get('#qualitest_logo').snapshot({\n  name: 'human snapshot name' // to use in the snapshot file\n  //json: false                  // convert DOM elements into JSON\n  // when storing in the snapshot file\n});",
+              "err": {
+                "message": "Error: Snapshot difference. To update, delete snapshot and rerun test.\n   xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n   x=\"0px\"\n   y=\"0px\"\n   width=\"330.843\"\n-  height=\"38.253\"\n+  height=\"38.257\"\n   viewBox=\"0 0 130.8 23.3\"\n   style=\"enable-background:new 0 0 130.8 23.3;\"\n   xml:space=\"preserve\">\n   <style type=\"text/css\">\n",
+                "estack": "Error: Snapshot difference. To update, delete snapshot and rerun test.\n   xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n   x=\"0px\"\n   y=\"0px\"\n   width=\"330.843\"\n-  height=\"38.253\"\n+  height=\"38.257\"\n   viewBox=\"0 0 130.8 23.3\"\n   style=\"enable-background:new 0 0 130.8 23.3;\"\n   xml:space=\"preserve\">\n   <style type=\"text/css\">\n\n    at eval (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:1183:15)\n    at InternalConstructor.orElse (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:8481:14)\n    at cyRaiser (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:1172:14)\n    at setOrCheckValue (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:38590:7)\n    at snapShotCore (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:38602:14)\n    at setSnapshot (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:1188:5)\n    at Context.snapshot (https://qualitestgroup.com/__cypress/tests?p=cypress\\support\\index.js:1207:5)",
+                "diff": null
+              },
+              "uuid": "bf2f2481-de9e-4765-845f-d43b18e9b49c",
+              "parentUUID": "da84bcb8-d6a1-475e-90d3-594cf0113173",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bf2f2481-de9e-4765-845f-d43b18e9b49c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18738,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

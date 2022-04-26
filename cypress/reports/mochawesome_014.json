@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 2,
+    "failures": -1,
+    "start": "2022-04-26T15:59:56.186Z",
+    "end": "2022-04-26T16:03:28.123Z",
+    "duration": 211937,
+    "testsRegistered": 5,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 40,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9846a19f-0658-4a03-abf4-db8b498ae1b0",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/testcase_01.spec.js",
+      "file": "cypress/integration/testcases/testcase_01.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef302d2e-4f35-4d70-8c12-f6471d99c9e0",
+          "title": "Check the Page Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handling home",
+              "fullTitle": "Check the Page Navigation Handling home",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "8706d9cc-0cf8-47f8-b053-88f32bd32213",
+              "parentUUID": "ef302d2e-4f35-4d70-8c12-f6471d99c9e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Handling new Browser Window",
+              "fullTitle": "Check the Page Navigation Handling new Browser Window",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "31d4445c-af03-4be2-ab86-8fb25c017e72",
+              "parentUUID": "ef302d2e-4f35-4d70-8c12-f6471d99c9e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Check the Page Navigation Verify Page title",
+              "timedOut": null,
+              "duration": 206,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.getPageTitle().should('contains', 'Qualitest');",
+              "err": {},
+              "uuid": "bd738c17-6af6-4318-8d0f-e3df9383ab4a",
+              "parentUUID": "ef302d2e-4f35-4d70-8c12-f6471d99c9e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "visits to  the \"Solution\" page",
+              "fullTitle": "Check the Page Navigation visits to  the \"Solution\" page",
+              "timedOut": null,
+              "duration": 201470,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "hp.navigateToSolutionsPage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 200000ms: Expected to find element: `#menu-item-673 > [href=\"#\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 200000ms: Expected to find element: `#menu-item-673 > [href=\"#\"]`, but never found it.\n    navigateToSolutionsPage@https://qualitestgroup.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:187:8\n    ./cypress/integration/testcases/testcase_01.spec.js/</<@https://qualitestgroup.com/__cypress/tests?p=cypress\\integration\\testcases\\testcase_01.spec.js:264:8\n    ../driver/src/cypress/cy.ts/setRunnable/runnable.fn@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:173116:43\n    callFn@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:125506:21\n    ../driver/src/cypress/runner.ts/create/onRunnableRun/<@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:179993:30\n    finallyHandler@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:9750:23\n    tryCatcher@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:13196:23\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromiseFromHandler@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11131:31\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11188:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11233:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11313:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._fulfill@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11257:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11201:21\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11233:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11313:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._fulfill@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11257:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._resolveCallback@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11051:57\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromiseFromHandler@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11143:17\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11188:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11233:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11313:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._fulfill@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11257:18\n    ../../node_modules/bluebird/js/release/promise_array.js/module.exports/PromiseArray.prototype._resolve@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11530:19\n    ../../node_modules/bluebird/js/release/promise_array.js/module.exports/PromiseArray.prototype._promiseFulfilled@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11548:14\n    ../../node_modules/bluebird/js/release/promise_array.js/module.exports/PromiseArray.prototype._iterate@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11518:31\n    init@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11482:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11185:21\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11233:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11313:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._fulfill@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11257:18\n    ../../node_modules/bluebird/js/release/promise_array.js/module.exports/PromiseArray.prototype._resolve@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11530:19\n    ../../node_modules/bluebird/js/release/promise_array.js/module.exports/PromiseArray.prototype._promiseFulfilled@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11548:14\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11193:26\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11233:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11313:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._fulfill@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11257:18\n    ../../node_modules/bluebird/js/release/promise_array.js/module.exports/PromiseArray.prototype._resolve@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11530:19\n    ../../node_modules/bluebird/js/release/map.js/module.exports/MappingPromiseArray.prototype._promiseFulfilled@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:10356:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11193:26\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11233:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:11313:18\n    _drainQueueStep@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:7903:12\n    _drainQueue@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:7896:24\n    ../../node_modules/bluebird/js/release/async.js/</Async.prototype._drainQueues@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:7912:16\n    ../../node_modules/bluebird/js/release/async.js/</Async/this.drainQueues@https://qualitestgroup.com/__cypress/runner/cypress_runner.js:7782:14\n",
+                "diff": null
+              },
+              "uuid": "8962928c-a660-490e-b4f3-b5bc5a07a2b2",
+              "parentUUID": "ef302d2e-4f35-4d70-8c12-f6471d99c9e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks if \"About QA InfoTech\" is present on that page",
+              "fullTitle": "Check the Page Navigation checks if \"About QA InfoTech\" is present on that page",
+              "timedOut": null,
+              "duration": 192,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "hp.checkContent().contains('Our Solutions');",
+              "err": {},
+              "uuid": "444fc0c8-2b4f-46b6-bacd-3ae1158a737b",
+              "parentUUID": "ef302d2e-4f35-4d70-8c12-f6471d99c9e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd738c17-6af6-4318-8d0f-e3df9383ab4a",
+            "444fc0c8-2b4f-46b6-bacd-3ae1158a737b"
+          ],
+          "failures": [
+            "8962928c-a660-490e-b4f3-b5bc5a07a2b2"
+          ],
+          "pending": [
+            "8706d9cc-0cf8-47f8-b053-88f32bd32213",
+            "31d4445c-af03-4be2-ab86-8fb25c017e72"
+          ],
+          "skipped": [],
+          "duration": 201868,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": "true"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
